@@ -48,7 +48,32 @@ CREATE TABLE transaction
 	CONSTRAINT transaction_accoutNum_fk FOREIGN KEY(accountNum) REFERENCES 		account(accountNum)
 );
 
+CREATE TABLE users
+(
+	id NUMBER(10) CONSTRAINT users_id_nn NOT NULL,
+	username varchar2(20) CONSTRAINT users_username_nn NOT NULL,
+	password varchar2(20) CONSTRAINT users_password_nn NOT NULL,
+	type NUMBER(1,0) CONSTRAINT users_type_nn NOT NULL,
+	customerID number(10) CONSTRAINT users_customerID_nn NOT NULL,
+	CONSTRAINT users_customerID_fk FOREIGN KEY(customerID) REFERENCES customer(customerID),
+	CONSTRAINT users_customerID_unique UNIQUE (customerID)
+);
+
 INSERT INTO currency (abbreviation) VALUES ('EGP');
 INSERT INTO currency (abbreviation) VALUES ('USD');
 INSERT INTO currency (abbreviation) VALUES ('EUR');
+
+ALTER TABLE users ADD (CONSTRAINT users_id_pk PRIMARY KEY (id) );
+CREATE SEQUENCE users_seq START WITH 1;
+
+CREATE OR REPLACE TRIGGER users_bid
+BEFORE INSERT ON users
+FOR EACH ROW
+
+BEGIN
+	SELECT 	users_seq.NEXTVAL
+	INTO	:new.id
+	FROM 	dual;
+END;
+/
 
