@@ -52,4 +52,3 @@ INSERT INTO currency (abbreviation) VALUES ('EGP');
 INSERT INTO currency (abbreviation) VALUES ('USD');
 INSERT INTO currency (abbreviation) VALUES ('EUR');
 
-
