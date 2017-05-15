@@ -1,13 +1,32 @@
 from django.shortcuts import get_object_or_404, render
 from django.template import loader
-from .models import Account
+from .models import Account,Users,Currency
 
 # Create your views here.
 
-from django.http import HttpResponse
+from django.http import HttpResponse,HttpResponseRedirect
+from django.urls import reverse
+
+def login_page(request):
+    return render(request, template_name='banking_app/login_page.html')
 
 def login(request):
-    return HttpResponse("THIS IS THE LOGIN PAGE!")
+    user_name = request.POST['username']
+    password = request.POST['password']
+    user = Users.objects.raw("SELECT * from users where username = %s AND password = %s", [user_name, password])
+    user = list(user)
+    # user = list(Users.objects.raw("SELECT * from users"))
+    if not user:
+        return render(request, template_name= 'banking_app/login_page.html', context= {
+            'error_message': "wrong username or password",
+        })
+    elif user.type:
+        return HttpResponseRedirect(reverse('banking_app:adminPortal', args=(user.customerid)))
+    else:
+        return HttpResponseRedirect(reverse('banking_app:userPortal', args=(user.customerid)))
+
+def createUser(request):
+    return HttpResponse("create new user")
 
 def createAccount(request):
     return HttpResponse("Admin is creating an account.")
