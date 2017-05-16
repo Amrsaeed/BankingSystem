@@ -55,21 +55,27 @@ def create_account(request):
     curr = [i.abbreviation for i in curr]
     types = list(Accounttype.objects.raw("SELECT * FROM accounttype"))
     types = [i.name for i in types]
+    customer_id = list(Users.objects.raw("SELECT * FROM users WHERE id=%s",
+                                        [request.session['user_id']]))[0].customerid.customerid
     if not request.POST:
         return render(request,"banking_app/create_account.html",context={
             'curr': curr,
             'types': types,
         })
+    # print([request.POST['account_type'], request.POST['currency_type'], account_id])
     with connection.cursor() as cursor:
-        cursor.execute("INSERT INTO account VALUES(account_seq.next_val,%s,%s,%s,%s)",
-                       [request.POST['account_type'], request.POST['currency_type'], request.session['user_id'],
-                        0])
+        cursor.execute("INSERT INTO account VALUES(account_seq.nextval,%s,%s,%s,0)",
+                       [request.POST['account_type'], request.POST['currency_type'], customer_id])
         return HttpResponseRedirect(reverse('banking_system:user_portal'))
 
 
 def user_portal(request):
-    print(request.session['user_id'])
-    return render(request,'banking_app/user_portal.html')
+    customer_id = list(Users.objects.raw("SELECT * FROM users WHERE id=%s",
+                                        [request.session['user_id']]))[0].customerid.customerid
+    accounts = list(Account.objects.raw("SELECT * FROM account WHERE customerid=%s",[customer_id]))
+    return render(request,'banking_app/user_portal.html',context={
+        'accs' : accounts,
+    })
 
 def adminPortal(request):
     print(request.session['user_id'])

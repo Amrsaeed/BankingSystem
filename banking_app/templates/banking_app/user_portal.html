@@ -8,23 +8,27 @@
 {% csrf_token %}
 <table class="table">
                     <tr>
-                        <td><label for="account_type">Account type</label></td>
-                        <td><select name="account_type">
-                            {% for acc_type in types %}
-                                <option name= {{acc_type}}>{{ acc_type }} </option>
+                        <td><label for="account">Account:</label></td>
+                        <td><select name="account">
+                            {% for acc in accs %}
+                                <option name= {{acc.accountnum}}>
+                                    type: {{acc.accounttype.name}} number: {{ acc.accountnum }}</option>
+                            {% endfor %}
                             </select>
                         </td>
                     </tr>
                    <tr>
-                        <td><label for="currency_type">Currency type</label></td>
-                        <td><select name="currency_type">
-                            {% for curr_type in curr %}
-                                <option name= {{curr_type}}>{{ curr_type }} </option>
+                        <td><label for="action">Action</label></td>
+                        <td><select name="action">
+                                <option name= Withdraw> Withdraw </option>
+                                <option name= Deposit> Deposit </option>
+                                <option name= Summery> Summery </option>
+                                <option name= Transfer> Transfer </option>
                             </select>
                         </td>
                     </tr>
                 </table>
-<input type="submit" value="Create Account" />
+<input type="submit" value="start" />
 
 </form>
 
