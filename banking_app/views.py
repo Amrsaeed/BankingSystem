@@ -42,7 +42,7 @@ def adminPortal(request):
 def manageAccounts(request):
     return HttpResponse("Managing Accounts.")
 
-def manageAccountTypes(request):
+def manageAccountTypes(request):     
     AccountTypes = Accounttype.objects.raw("SELECT * from accounttype")
     debit_interest = request.POST.get('Debit_interest', AccountTypes[0].interest)
     current_interest = request.POST.get('Current_interest', AccountTypes[1].interest)
@@ -61,9 +61,18 @@ def manageAccountTypes(request):
     return render(request, 'banking_app/manage_account_type.html', context)
 
 def manageCustomers(request):
+    if request.POST.get('edit') == 'Edit':
+       editCustomer(request)
+       customer = Customer.objects.raw("SELECT * from customer WHERE customerid = " + request.POST.get('customer_id', -1))
+       context = {'CustomerID': customer[0].customerid, 'Fname': customer[0].fname, 'Lname': customer[0].lname, 'Address': customer[0].address, 'Email': customer[0].email,}
+       return render(request, 'banking_app/edit_customer.html', context)
+    
+    if request.POST.get('add') == 'Add Customer':
+       return render(request, 'banking_app/add_customer.html')
+       
     customers = Customer.objects.raw("SELECT * from customer")
-    print(customers)
-    return HttpResponse("Managing Customers.")
+    context = {'Customers': customers,}
+    return render(request, 'banking_app/manage_customers.html', context)
 
 def accountSummary(request):
     return HttpResponse("User account summary.")
@@ -76,3 +85,33 @@ def deposit(request):
 
 def transfer(request):
     return HttpResponse("Transfer money.")
+    
+def editCustomer(request):
+    customerID = request.POST.get('customer_id', 0)
+    customerFname = request.POST.get('customer_fname', 0)
+    customerLname = request.POST.get('customer_lname', 0)
+    customerEmail = request.POST.get('customer_email', 0)
+    customerAddress = request.POST.get('customer_address', 0)
+    print(customerID, customerFname, customerLname, customerEmail, customerAddress)
+    with connection.cursor() as c:
+        c.execute("UPDATE customer SET fname = '" + str(customerFname) + "' WHERE customerid = " + str(customerID))
+        c.execute("UPDATE customer SET lname = '" + str(customerLname) + "' WHERE customerid = " + str(customerID))
+        c.execute("UPDATE customer SET email = '" + str(customerEmail) + "' WHERE customerid = " + str(customerID))
+        c.execute("UPDATE customer SET address = '" + str(customerAddress) + "' WHERE customerid = " + str(customerID))
+
+    context = {'CustomerID': customerID, 'Fname': customerFname, 'Lname': customerLname, 'Address': customerAddress, 'Email': customerEmail,}
+    return render(request, 'banking_app/edit_customer.html', context)
+	
+def addCustomer(request):
+    customerID = request.POST.get('customer_id', 0)
+    customerFname = request.POST.get('customer_fname', '')
+    customerLname = request.POST.get('customer_lname', '')
+    customerEmail = request.POST.get('customer_email', '')
+    customerAddress = request.POST.get('customer_address', '')
+    with connection.cursor() as c:
+        c.execute("SELECT COUNT(*) from customer")
+        customerid = c.fetchone()
+        customerid = customerid[0] + 1
+        c.execute("INSERT INTO customer (customerid, fname, lname, email, address) VALUES (" + str(customerid) + ",'" + customerFname + "', '" + customerLname + "', '" + customerEmail + "', '" + customerAddress + "')")
+    context = {'CustomerID': customerID, 'Fname': customerFname, 'Lname': customerLname, 'Address': customerAddress, 'Email': customerEmail,}
+    return render(request, 'banking_app/add_customer.html', context)
