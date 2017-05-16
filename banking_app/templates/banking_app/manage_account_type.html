@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+
+<h1>Managing Account Types </h1>
+
+{% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
+
+<form>
+<table>
+	<tr>
+	    <th>Account Type</th>
+		<th>Interest Rate</th>
+		<th>Ceiling Amount</th>
+	</tr>
+	{% for type in AccountTypes %}
+	<tr>
+        <td> {{ type.name }} </td>
+        <td><input id="id_interestrate" name="interest" 
+		type ="text" class = "form-control" value={{type.interest}}></label></td>
+		<td><input id="id_interestrate" name="interest" 
+		type ="text" class = "form-control" value={{type.ceiling}}></label></td>
+	</tr>
+    {% endfor %}
+   
+</table>
+</form>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+
+<h1>Admin Portal </h1>
+
+{% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
+
+<form>
+<table>
+	<tr>
+		<td>
+			<input id="MAB" type="button" value="Manage Accounts" onclick="location.href='/banking_app/adminPortal/manageAccounts';" />
+		</td>
+		<td>
+			<input id="MATB" type="button" value="Manage Account Types" onclick="location.href='/banking_app/adminPortal/manageAccountTypes';" />
+		</td>
+		<td>
+			<input id="MCB" type="button" value="Manage Customers" onclick="location.href='/banking_app/adminPortal/manageCustomers';" />
+		</td>
+	</tr>
+</table>
+</form>
+</body>
+</html>
+
+

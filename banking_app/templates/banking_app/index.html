@@ -1,7 +1,11 @@
 {% if Accounts_list %}
     <ul>
     {% for account in Accounts_list %}
-        <li><a href="{% url 'banking_app:adminPortal' account.id }/">{{ account.accountnum }}</a></li>
+        <li>
+		<a>{{ account.name }}</a>
+		<a>{{ account.ceiling }}</a>
+		<a>{{ account.interest }}%</a>
+	</li>
     {% endfor %}
     </ul>
 {% else %}

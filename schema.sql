@@ -77,3 +77,6 @@ BEGIN
 END;
 /
 
+INSERT INTO accountType (name, ceiling, interest) VALUES ('Debit', 5000, 12);
+INSERT INTO accountType (name, ceiling, interest) VALUES ('Current', 5000, 12);
+INSERT INTO accountType (name, ceiling, interest) VALUES ('Saving', 5000, 12);
