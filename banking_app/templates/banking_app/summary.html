@@ -8,7 +8,7 @@
         border : none;
     }
 </style>
-<form action="{% url 'banking_system:user_portal' %}" method="post">
+<form action="{% url 'banking_system:summary' %}" method="post">
     {% csrf_token %}
 
         <table id="t01">
@@ -58,8 +58,8 @@ table, th, td {
         <tr>
            <td>{{ row.transnum }}</td>
            <td>{{ row.type }}</td>
-           <td>{{ row.amount }}</td>
            <td>{{ row.transdate }}</td>
+            <td>{{ row.amount }}</td>
         </tr>
     {% endfor %}
 </table>

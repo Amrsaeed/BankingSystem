@@ -9,10 +9,18 @@
 <h1>Transferring Money </h1>
 
 {% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
+<style>
+table, th, td {
+    border: 1px solid black;
+}
+table#t01 ,tr#t01 , td#t01{
+        border : none;
+}
 
+</style>
 <form action="{% url 'banking_system:transfer' %}" method="post">
 {% csrf_token %}
-<table width="70%">
+<table id="t01" width="70%">
 	<tr>
 		<th width="10%">Account Number</th>
 		<th width="20%">Account Type</th>

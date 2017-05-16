@@ -10,9 +10,19 @@
 
 {% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
 
+<style>
+table, th, td {
+    border: 1px solid black;
+}
+table#t01 ,tr#t01 , td#t01{
+        border : none;
+}
+
+</style>
+
 <form action="{% url 'banking_system:deposit' %}" method="post">
 {% csrf_token %}
-<table width="70%">
+<table id ="t01" width="70%">
 	<tr>
 		<th width="10%">Account Number</th>
 		<th width="20%">Account Type</th>
@@ -31,5 +41,7 @@
 </table>
 <input id="Return" type="button" value="Back" onclick="location.href='/banking_app/user_portal';" />
 </form>
+<a href={% url 'banking_system:user_portal' %}>Back to Portal</a>
 </body>
 </html>
+

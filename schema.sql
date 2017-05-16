@@ -103,13 +103,14 @@ BEGIN
 END;
 /
 
+
 CREATE SEQUENCE tran_seq START WITH 1;
 
 CREATE OR REPLACE TRIGGER transaction_bid
 BEFORE INSERT ON transaction
 FOR EACH ROW
 BEGIN
-	SELECT 	tran_seq.NEXTVAL
+	SELECT 	transaction_seq.NEXTVAL
 	INTO	:new.transNum
 	FROM 	dual;
 END;
