@@ -71,11 +71,20 @@ def create_account(request):
 
 def user_portal(request):
     customer_id = list(Users.objects.raw("SELECT * FROM users WHERE id=%s",
-                                        [request.session['user_id']]))[0].customerid.customerid
-    accounts = list(Account.objects.raw("SELECT * FROM account WHERE customerid=%s",[customer_id]))
-    return render(request,'banking_app/user_portal.html',context={
-        'accs' : accounts,
-    })
+                                         [request.session['user_id']]))[0].customerid.customerid
+    accounts = list(Account.objects.raw("SELECT * FROM account WHERE customerid=%s", [customer_id]))
+    if not request.POST:
+        return render(request,'banking_app/user_portal.html',context={
+            'accs' : accounts,
+        })
+    if request.POST['action'] == 'Withdraw':
+        return HttpResponseRedirect(reverse('banking_system:withdraw'))
+    elif request.POST['action'] == 'Deposit':
+        return HttpResponseRedirect(reverse('banking_system:deposit'))
+    elif request.POST['action'] == 'Transfer':
+        return HttpResponseRedirect(reverse('banking_system:transfer'))
+    else:
+        return HttpResponseRedirect(reverse('banking_system:summary'))
 
 def adminPortal(request):
     print(request.session['user_id'])
@@ -113,7 +122,8 @@ def manageCustomers(request):
     print(customers)
     return HttpResponse("Managing Customers.")
 
-def accountSummary(request):
+def summary(request):
+
     return HttpResponse("User account summary.")
 
 def withdraw(request):
