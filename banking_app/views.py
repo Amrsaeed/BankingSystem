@@ -100,7 +100,17 @@ def adminPortal(request):
     return render(request, 'banking_app/adminPortal.html')
 
 def manageAccounts(request):
-    return HttpResponse("Managing Accounts.")
+    if request.POST.get('edit') == 'Edit':
+       account = Account.objects.raw("SELECT * from account WHERE accountnum = " + request.POST.get('account_num', -1))
+       context = {'AccountNum': account[0].accountnum, 'AccountType': account[0].accounttype, 'Currency': account[0].currency, 'CustomerID': account[0].customerid, 'Balance': account[0].balance,}
+       return render(request, 'banking_app/edit_account.html', context)
+    
+    if request.POST.get('add') == 'Add Account':
+       return render(request, 'banking_app/add_account.html')
+       
+    accounts = Account.objects.raw("SELECT * from account")
+    context = {'Accounts': accounts,}
+    return render(request, 'banking_app/manage_accounts.html', context)
 
 def manageAccountTypes(request):     
     AccountTypes = Accounttype.objects.raw("SELECT * from accounttype")
@@ -122,7 +132,6 @@ def manageAccountTypes(request):
 
 def manageCustomers(request):
     if request.POST.get('edit') == 'Edit':
-       editCustomer(request)
        customer = Customer.objects.raw("SELECT * from customer WHERE customerid = " + request.POST.get('customer_id', -1))
        context = {'CustomerID': customer[0].customerid, 'Fname': customer[0].fname, 'Lname': customer[0].lname, 'Address': customer[0].address, 'Email': customer[0].email,}
        return render(request, 'banking_app/edit_customer.html', context)
@@ -205,3 +214,35 @@ def addCustomer(request):
         c.execute("INSERT INTO customer (customerid, fname, lname, email, address) VALUES (" + str(customerid) + ",'" + customerFname + "', '" + customerLname + "', '" + customerEmail + "', '" + customerAddress + "')")
     context = {'CustomerID': customerID, 'Fname': customerFname, 'Lname': customerLname, 'Address': customerAddress, 'Email': customerEmail,}
     return render(request, 'banking_app/add_customer.html', context)
+    
+def editAccount(request):
+    accountNum = request.POST.get('account_num', 0)
+    accountType = request.POST.get('account_type', 0)
+    accountCurrency = request.POST.get('account_currency', 0)
+    accountCustomerid = request.POST.get('account_customerid', 0)
+    accountBalance = request.POST.get('account_balance', 0)
+    print(accountNum, accountType, accountCurrency, accountCustomerid, accountBalance)
+    with connection.cursor() as c:
+        c.execute("UPDATE account SET accounttype = '" + str(accountType) + "' WHERE accountnum = " + str(accountNum))
+        c.execute("UPDATE account SET currency = '" + str(accountCurrency) + "' WHERE accountnum = " + str(accountNum))
+        c.execute("UPDATE account SET customerid = " + str(accountCustomerid) + " WHERE accountnum = " + str(accountNum))
+        c.execute("UPDATE account SET balance = " + str(accountBalance) + " WHERE accountnum = " + str(accountNum))
+
+    context = {'AccountNum': accountNum, 'AccountType': accountType, 'Currency': accountCurrency, 'CustomerID': accountCustomerid, 'Balance': accountBalance,}
+    return render(request, 'banking_app/edit_account.html', context)
+    
+def addAccount(request):
+    print("IN")
+    accountNum = request.POST.get('account_num', 0)
+    accountType = request.POST.get('account_type', 'DEBIT')
+    accountCurrency = request.POST.get('account_currency', 'EGP')
+    accountCustomerid = request.POST.get('account_customerid', -1)
+    accountBalance = request.POST.get('account_balance', 0)
+    print(accountNum, accountType, accountCurrency, accountBalance, accountCustomerid)
+    with connection.cursor() as c:
+        c.execute("SELECT COUNT(*) from account")
+        accountnum = c.fetchone()
+        accountnum = accountnum[0] + 1
+        c.execute("INSERT INTO account (accountnum, accounttype, currency, customerid, balance) VALUES (" + str(accountnum) + ",'" + str(accountType) + "', '" + str(accountCurrency) + "', '" + str(accountCustomerid) + "', " + str(accountBalance) + ")")
+    context = {'AccountNum': accountNum, 'AccountType': accountType, 'Currency': accountCurrency, 'CustomerID': accountCustomerid, 'Balance': accountBalance,}
+    return render(request, 'banking_app/add_account.html', context)
