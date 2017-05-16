@@ -1,3 +1,19 @@
+delete from users where 1=1;
+delete from transaction where 1=1;
+delete from phonenumber where 1=1;
+delete from account where 1=1;
+delete from currency where 1=1;
+delete from accounttype where 1=1;
+delete from customer where 1=1;
+drop table users;
+drop table transaction;
+drop table account;
+drop table phonenumber;
+drop table currency;
+drop table accounttype;
+drop table customer;
+drop sequence account_seq;
+drop SEQUENCE users_seq;
 CREATE TABLE customer
 (
 	customerID number(10) CONSTRAINT customer_customerId_pk PRIMARY KEY,
@@ -59,9 +75,7 @@ CREATE TABLE users
 	CONSTRAINT users_customerID_unique UNIQUE (customerID)
 );
 
-INSERT INTO currency (abbreviation) VALUES ('EGP');
-INSERT INTO currency (abbreviation) VALUES ('USD');
-INSERT INTO currency (abbreviation) VALUES ('EUR');
+
 
 ALTER TABLE users ADD (CONSTRAINT users_id_pk PRIMARY KEY (id) );
 CREATE SEQUENCE users_seq START WITH 1;
@@ -69,7 +83,6 @@ CREATE SEQUENCE users_seq START WITH 1;
 CREATE OR REPLACE TRIGGER users_bid
 BEFORE INSERT ON users
 FOR EACH ROW
-
 BEGIN
 	SELECT 	users_seq.NEXTVAL
 	INTO	:new.id
@@ -77,6 +90,25 @@ BEGIN
 END;
 /
 
+CREATE SEQUENCE account_seq START WITH 1;
+
+CREATE OR REPLACE TRIGGER account_bid
+BEFORE INSERT ON account
+FOR EACH ROW
+BEGIN
+	SELECT 	account_seq.NEXTVAL
+	INTO	:new.accountnum
+	FROM 	dual;
+END;
+/
 INSERT INTO accountType (name, ceiling, interest) VALUES ('Debit', 5000, 12);
 INSERT INTO accountType (name, ceiling, interest) VALUES ('Current', 5000, 12);
 INSERT INTO accountType (name, ceiling, interest) VALUES ('Saving', 5000, 12);
+INSERT INTO currency (abbreviation) VALUES ('EGP');
+INSERT INTO currency (abbreviation) VALUES ('USD');
+INSERT INTO currency (abbreviation) VALUES ('EUR');
+INSERT INTO customer values(1234,'ewais','ahmed','a.ewais@aucegypt.edu','egypt');
+INSERT INTO customer values(12345,'saeed','amr','amr@aucegypt.edu','egypt');
+insert into users values(users_seq.nextval,'3wais','password',1,1234);
+insert into users values(users_seq.nextval,'amr','password',0,12345);
+
