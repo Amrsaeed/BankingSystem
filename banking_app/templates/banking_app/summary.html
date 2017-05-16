@@ -4,10 +4,33 @@
 
 {% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
 <style>
+    table#t01 ,tr#t01 , td#t01{
+        border : none;
+    }
+</style>
+<form action="{% url 'banking_system:user_portal' %}" method="post">
+    {% csrf_token %}
+
+        <table id="t01">
+            <tr id="t01">
+                <td id="t01"><label for="start">Starting:</label></td>
+                <td id="t01"><input id="start" name="start"
+                           type="date" class="form-control"></td>
+                <td id="t01"><label for="end">Ending:</label></td>
+                <td id="t01"><input id="end" name="end"
+                           type="date" class="form-control"></td>
+            </tr>
+
+        </table>
+<input type="submit" value="Get Summary" />
+</form>
+<style>
 table, th, td {
     border: 1px solid black;
 }
 </style>
+
+
 
 <table style="width:100%">
     <tr>

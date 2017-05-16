@@ -147,10 +147,11 @@ def summary(request):
     print(request.session['account_num'])
     acc = list(Account.objects.raw("SELECT * FROM account WHERE accountnum=%s",
                                    [request.session['account_num']]))[0]
-    trans = list(Transaction.objects.raw("SELECT * FROM transaction WHERE accountnum =%s",
-                                         [request.session['account_num']]))
-    print(acc)
-    print(trans)
+    trans = list(Transaction.objects.raw("SELECT * FROM transaction "
+                                         "WHERE accountnum =%s AND to_date(transdate)BETWEEN "
+                                         "to_date(%s,DD-MON-YY) AND to_date(%s,DD-MON-YY)",
+                                         [request.session['account_num'],request.POST['start'],
+                                          request.POST['end']]))
     return render(request,'banking_app/summary.html',context={
         'acc':acc,
         'trans': trans,
@@ -160,6 +161,7 @@ def withdraw(request):
     return HttpResponse("Withdraw money.")
 
 def deposit(request):
+
     return HttpResponse("deposit money.")
 
 def transfer(request):
