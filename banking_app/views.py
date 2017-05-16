@@ -1,5 +1,6 @@
 from django.shortcuts import get_object_or_404, render
 from django.template import loader
+from django.db import connection
 from .models import *
 from django.db import connection
 # Create your views here.
@@ -84,6 +85,19 @@ def manageAccounts(request):
     return HttpResponse("Managing Accounts.")
 
 def manageAccountTypes(request):
+    AccountTypes = Accounttype.objects.raw("SELECT * from accounttype")
+    debit_interest = request.POST.get('Debit_interest', AccountTypes[0].interest)
+    current_interest = request.POST.get('Current_interest', AccountTypes[1].interest)
+    saving_interest = request.POST.get('Saving_interest', AccountTypes[2].interest)
+    debit_ceiling = request.POST.get('Debit_ceiling', AccountTypes[0].ceiling)
+    current_ceiling = request.POST.get('Current_ceiling', AccountTypes[1].ceiling)
+    saving_ceiling = request.POST.get('Saving_ceiling', AccountTypes[2].ceiling)
+    
+    with connection.cursor() as c:
+         c.execute("UPDATE accounttype SET ceiling = " + str(debit_ceiling) + ", interest = " + str(debit_interest) + " WHERE name = 'Debit'")
+         c.execute("UPDATE accounttype SET ceiling = " + str(current_ceiling) + ", interest = " + str(current_interest) + " WHERE name = 'Current'")
+         c.execute("UPDATE accounttype SET ceiling = " + str(saving_ceiling) + ", interest = " + str(saving_interest) + " WHERE name = 'Saving'")
+    
     AccountTypes = Accounttype.objects.raw("SELECT * from accounttype")
     context = {'AccountTypes' : AccountTypes,}
     return render(request, 'banking_app/manage_account_type.html', context)
