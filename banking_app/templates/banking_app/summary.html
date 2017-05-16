@@ -1,0 +1,44 @@
+<h1>Account summary </h1>
+
+
+
+{% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
+<style>
+table, th, td {
+    border: 1px solid black;
+}
+</style>
+
+<table style="width:100%">
+    <tr>
+       <th>Account Number</th>
+        <th>Account Type</th>
+        <th>Balance</th>
+        <th>Currency</th>
+    </tr>
+    <tr>
+       <td>{{ acc.accountnum }}</td>
+        <td>{{ acc.accounttype.name }}</td>
+        <td>{{ acc.balance }}</td>
+        <td>{{ acc.currency.abbreviation }}</td>
+    </tr>
+</table>
+<h1>Transactions</h1>
+<table style="width:100%">
+   <tr>
+       <th>transaction number</th>
+       <th>transaction type</th>
+       <th>transaction date</th>
+       <th>transaction amount</th>
+   </tr>
+    {% for row in trans %}
+        <tr>
+           <td>{{ row.transnum }}</td>
+           <td>{{ row.type }}</td>
+           <td>{{ row.amount }}</td>
+           <td>{{ row.transdate }}</td>
+        </tr>
+    {% endfor %}
+</table>
+
+<a href={% url 'banking_system:user_portal' %}>Back to Portal</a>

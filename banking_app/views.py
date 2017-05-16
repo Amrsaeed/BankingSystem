@@ -2,41 +2,101 @@ from django.shortcuts import get_object_or_404, render
 from django.template import loader
 from django.db import connection
 from .models import *
-
+from django.db import connection
 # Create your views here.
 
 from django.http import HttpResponse,HttpResponseRedirect
 from django.urls import reverse
 
-def login_page(request):
-    return render(request, template_name='banking_app/login_page.html')
-
 def login(request):
+    if not request.POST:
+        return render(request, template_name='banking_app/login_page.html')
     user_name = request.POST['username']
     password = request.POST['password']
     user = Users.objects.raw("SELECT * from users where username = %s AND password = %s", [user_name, password])
     user = list(user)
     # user = list(Users.objects.raw("SELECT * from users"))
+    # print(user[0].id)
     if not user:
-        return render(request, template_name= 'banking_app/login_page.html', context= {
+        return render(request, template_name='banking_app/login_page.html', context={
             'error_message': "wrong username or password",
         })
-    elif user.type:
-        return HttpResponseRedirect(reverse('banking_app:adminPortal', args=(user.customerid)))
+    elif user[0].type:
+        request.session['user_id'] = user[0].id
+        return HttpResponseRedirect(reverse('banking_system:adminPortal'))
     else:
-        return HttpResponseRedirect(reverse('banking_app:userPortal', args=(user.customerid)))
+        request.session['user_id'] = user[0].id
+        return HttpResponseRedirect(reverse('banking_system:user_portal'))
 
-def createUser(request):
-    return HttpResponse("create new user")
+def create_user(request):
+    if not request.POST:
+        return render(request, template_name='banking_app/create_user.html')
+    with connection.cursor() as cursor:
+        cursor.execute("INSERT INTO customer VALUES(%s,%s,%s,%s,%s)",
+                       [request.POST['id'],request.POST['lname'],request.POST['fname'],
+                        request.POST['email'],request.POST['address']])
+        cursor.execute("INSERT INTO users VALUES(users_seq.nextval,%s,%s,0,%s)",
+                       [request.POST['username'],request.POST['password'],
+                        request.POST['id']])
+        cursor.execute("INSERT INTO phonenumber VALUES(%s,%s)",
+                       [request.POST['id'], request.POST['phone']])
+        if request.POST['phone1']:
+            cursor.execute("INSERT INTO phonenumber VALUES(%s,%s)",
+                           [request.POST['id'], request.POST['phone1']])
 
-def createAccount(request):
-    return HttpResponse("Admin is creating an account.")
 
-def userPortal(request, username, password):
-    return HttpResponse("User Portal.")
+    user = Users.objects.raw("SELECT * from users where username = %s AND password = %s",
+                             [request.POST['username'], request.POST['password']])
+    request.session['user_id'] = user[0].id
+    return HttpResponseRedirect(reverse('banking_system:user_portal'))
+
+def create_account(request):
+    curr = list(Currency.objects.raw("SELECT abbreviation FROM currency"))
+    curr = [i.abbreviation for i in curr]
+    types = list(Accounttype.objects.raw("SELECT * FROM accounttype"))
+    types = [i.name for i in types]
+    customer_id = list(Users.objects.raw("SELECT * FROM users WHERE id=%s",
+                                        [request.session['user_id']]))[0].customerid.customerid
+    if not request.POST:
+        return render(request,"banking_app/create_account.html",context={
+            'curr': curr,
+            'types': types,
+        })
+    # print([request.POST['account_type'], request.POST['currency_type'], account_id])
+    with connection.cursor() as cursor:
+        cursor.execute("INSERT INTO account VALUES(account_seq.nextval,%s,%s,%s,0)",
+                       [request.POST['account_type'], request.POST['currency_type'], customer_id])
+        return HttpResponseRedirect(reverse('banking_system:user_portal'))
+
+
+def user_portal(request):
+    request.session['account_num'] = None
+    customer_id = list(Users.objects.raw("SELECT * FROM users WHERE id=%s",
+                                         [request.session['user_id']]))[0].customerid.customerid
+    accounts = list(Account.objects.raw("SELECT * FROM account WHERE customerid=%s", [customer_id]))
+    if not request.POST:
+        return render(request,'banking_app/user_portal.html',context={
+            'accs' : accounts,
+        })
+    request.session['account_num'] = request.POST['account']
+
+    if request.POST['action'] == 'Withdraw':
+        return HttpResponseRedirect(reverse('banking_system:withdraw'))
+    elif request.POST['action'] == 'Deposit':
+        return HttpResponseRedirect(reverse('banking_system:deposit'))
+    elif request.POST['action'] == 'Transfer':
+        return HttpResponseRedirect(reverse('banking_system:transfer'))
+    else:
+        return HttpResponseRedirect(reverse('banking_system:summary'))
 
 def adminPortal(request):
-    template = loader.get_template('banking_app/adminPortal.html')
+    print(request.session['user_id'])
+    if not request.session['user_id']:
+        return HttpResponseRedirect(reverse('banking_system:login'))
+    user = list(Users.objects.raw("SELECT * from users where id=%s",
+                             [request.session['user_id']]))
+    if user[0].type==0:
+        return HttpResponse("you are not allowed here!!! stop it!")
     return render(request, 'banking_app/adminPortal.html')
 
 def manageAccounts(request):
@@ -74,8 +134,18 @@ def manageCustomers(request):
     context = {'Customers': customers,}
     return render(request, 'banking_app/manage_customers.html', context)
 
-def accountSummary(request):
-    return HttpResponse("User account summary.")
+def summary(request):
+    print(request.session['account_num'])
+    acc = list(Account.objects.raw("SELECT * FROM account WHERE accountnum=%s",
+                                   [request.session['account_num']]))[0]
+    trans = list(Transaction.objects.raw("SELECT * FROM transaction WHERE accountnum =%s",
+                                         [request.session['account_num']]))
+    print(acc)
+    print(trans)
+    return render(request,'banking_app/summary.html',context={
+        'acc':acc,
+        'trans': trans,
+    })
 
 def withdraw(request):
     return HttpResponse("Withdraw money.")
