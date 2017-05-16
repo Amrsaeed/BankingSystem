@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<style>
+table, td{
+    border: 1px solid black;
+}
+</style>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+
+<h1>Managing Accounts </h1>
+
+{% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
+
+<form action="{% url 'banking_system:manageAccounts' %}" method="post">
+{% csrf_token %}
+<table width="70%">
+	<tr>
+		<th width="10%">Account Number</th>
+		<th width="20%">Account Type</th>
+		<th width="20%">Currency</th>
+		<th width="20%">Customer ID</th>
+		<th width="30%">Balance</th>
+	</tr>
+	{% for account in Accounts %}
+	<tr>
+	<td>{{ account.accountnum }} <input type="hidden" name="account_num", value="{{ account.accountnum }}"></td>
+	<td> {{ account.accounttype.name }} <input type="hidden" name="account_type", value="{{ account.accounttype.name }}"> </td>
+	<td> {{ account.currency.abbreviation }} <input type="hidden" name="account_currency", value="{{ account.currency.abbreviation }}"> </td>
+	<td> {{ account.customerid.customerid }}  <input type="hidden" name="account_customerid", value="{{ account.customerid.customerid }}"></td>
+	<td> {{ account.balance }} <input type="hidden" name="account_balance", value="{{ account.balance }}"> </td>
+	<td> <input name = "edit" id="edit" type="Submit" value="Edit"/> </td>
+	</tr>
+    {% endfor %}
+</table>
+<input id="Add" name = 'add' type="Submit" value="Add Account"/>
+<input id="Return" type="button" value="Back" onclick="location.href='/banking_app/adminPortal';" />
+</form>
+</body>
+</html>
+
+
