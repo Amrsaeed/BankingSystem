@@ -158,14 +158,55 @@ def summary(request):
     })
 
 def withdraw(request):
-    return HttpResponse("Withdraw money.")
+    accountnum = request.session['account_num']
+    withdrawAmount = request.POST.get('withdraw_amount', -1)
+    account = Account.objects.raw("SELECT * from account WHERE accountnum = " + str(accountnum))
+    if account[0].balance > int(withdrawAmount) and int(withdrawAmount) > 0 and int(withdrawAmount) < account[0].accounttype.ceiling:
+       with connection.cursor() as c:
+           new_balance = account[0].balance - int(withdrawAmount)
+           c.execute("UPDATE account SET balance = " + str(new_balance) + " WHERE accountnum = " + str(accountnum))
+           c.execute("INSERT INTO transaction (transNum, type, transDate, amount, accountnum) VALUES (tran_seq.nextval, 'W', SYSDATE, " + str(withdrawAmount) + ", " + str(accountnum) + ")")
+ 
+    account = Account.objects.raw("SELECT * from account WHERE accountnum = " + str(accountnum))
+    context = {'Accountnum': account[0].accountnum, 'AccountType': account[0].accounttype.name, 'AccountBalance': account[0].balance, 'AccountCurrency': account[0].currency.abbreviation,}
+    print(account[0].accountnum, account[0].accounttype.name, account[0].currency.abbreviation, account[0].balance)
+    return render(request, 'banking_app/withdraw.html', context)
 
 def deposit(request):
-
-    return HttpResponse("deposit money.")
+    accountnum = request.session['account_num']
+    depositAmount = request.POST.get('deposit_amount', -1)
+    account = Account.objects.raw("SELECT * from account WHERE accountnum = " + str(accountnum))
+    if int(depositAmount) > 0 and int(depositAmount) < 10000000:
+       with connection.cursor() as c:
+           new_balance = account[0].balance + int(depositAmount)
+           c.execute("UPDATE account SET balance = " + str(new_balance) + " WHERE accountnum = " + str(accountnum))
+           c.execute("INSERT INTO transaction (transNum, type, transDate, amount, accountnum) VALUES (tran_seq.nextval, 'D', SYSDATE, " + str(depositAmount) + ", " + str(accountnum) + ")")
+ 
+    account = Account.objects.raw("SELECT * from account WHERE accountnum = " + str(accountnum))
+    context = {'Accountnum': account[0].accountnum, 'AccountType': account[0].accounttype.name, 'AccountBalance': account[0].balance, 'AccountCurrency': account[0].currency.abbreviation,}
+    print(account[0].accountnum, account[0].accounttype.name, account[0].currency.abbreviation, account[0].balance)
+    return render(request, 'banking_app/deposit.html', context)
 
 def transfer(request):
-    return HttpResponse("Transfer money.")
+    accountnum = request.session['account_num']
+    transferAmount = request.POST.get('transfer_amount', -1)
+    recievingAccountnum = request.POST.get('recieving_accountnum', 2)
+    account = Account.objects.raw("SELECT * from account WHERE accountnum = " + str(accountnum))
+    recieveingAccount = Account.objects.raw("SELECT * from account WHERE accountnum = " + str(recievingAccountnum))
+    
+    if account[0].balance > int(transferAmount) and int(transferAmount) > 0:
+       with connection.cursor() as c:
+           new_balance = account[0].balance - int(transferAmount)
+           recieveing_balance = recieveingAccount[0].balance + int(transferAmount)
+           c.execute("UPDATE account SET balance = " + str(new_balance) + " WHERE accountnum = " + str(accountnum))
+           c.execute("UPDATE account SET balance = " + str(recieveing_balance) + " WHERE accountnum = " + str(recievingAccountnum))
+           c.execute("INSERT INTO transaction (transNum, type, transDate, amount, accountnum) VALUES (tran_seq.nextval, 'T', SYSDATE, " + str(transferAmount) + ", " + str(accountnum) + ")")
+           c.execute("INSERT INTO transaction (transNum, type, transDate, amount, accountnum) VALUES (tran_seq.nextval, 'R', SYSDATE, " + str(transferAmount) + ", " + str(recievingAccountnum) + ")")
+ 
+    account = Account.objects.raw("SELECT * from account WHERE accountnum = " + str(accountnum))
+    context = {'Accountnum': account[0].accountnum, 'AccountType': account[0].accounttype.name, 'AccountBalance': account[0].balance, 'AccountCurrency': account[0].currency.abbreviation,}
+    print(account[0].accountnum, account[0].accounttype.name, account[0].currency.abbreviation, account[0].balance)
+    return render(request, 'banking_app/transfer.html', context)
     
 def editCustomer(request):
     customerID = request.POST.get('customer_id', 0)
@@ -225,6 +266,6 @@ def addAccount(request):
         c.execute("SELECT COUNT(*) from account")
         accountnum = c.fetchone()
         accountnum = accountnum[0] + 1
-        c.execute("INSERT INTO account (accountnum, accounttype, currency, customerid, balance) VALUES (" + str(accountnum) + ",'" + str(accountType) + "', '" + str(accountCurrency) + "', '" + str(accountCustomerid) + "', " + str(accountBalance) + ")")
+        c.execute("INSERT INTO account (accountnum, accounttype, currency, customerid, balance) VALUES ( account_seq.nextval,'" + str(accountType) + "', '" + str(accountCurrency) + "', '" + str(accountCustomerid) + "', " + str(accountBalance) + ")")
     context = {'AccountNum': accountNum, 'AccountType': accountType, 'Currency': accountCurrency, 'CustomerID': accountCustomerid, 'Balance': accountBalance,}
     return render(request, 'banking_app/add_account.html', context)

@@ -14,6 +14,7 @@ drop table accounttype;
 drop table customer;
 drop sequence account_seq;
 drop SEQUENCE users_seq;
+drop sequence tran_seq;
 CREATE TABLE customer
 (
 	customerID number(10) CONSTRAINT customer_customerId_pk PRIMARY KEY,
@@ -101,6 +102,19 @@ BEGIN
 	FROM 	dual;
 END;
 /
+
+CREATE SEQUENCE tran_seq START WITH 1;
+
+CREATE OR REPLACE TRIGGER transaction_bid
+BEFORE INSERT ON transaction
+FOR EACH ROW
+BEGIN
+	SELECT 	tran_seq.NEXTVAL
+	INTO	:new.transNum
+	FROM 	dual;
+END;
+/
+
 INSERT INTO accountType (name, ceiling, interest) VALUES ('Debit', 5000, 12);
 INSERT INTO accountType (name, ceiling, interest) VALUES ('Current', 5000, 12);
 INSERT INTO accountType (name, ceiling, interest) VALUES ('Saving', 5000, 12);
