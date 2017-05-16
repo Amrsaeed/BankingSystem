@@ -14,6 +14,7 @@ drop table accounttype;
 drop table customer;
 drop sequence account_seq;
 drop SEQUENCE users_seq;
+drop SEQUENCE transaction_seq;
 CREATE TABLE customer
 (
 	customerID number(10) CONSTRAINT customer_customerId_pk PRIMARY KEY,
@@ -98,6 +99,18 @@ FOR EACH ROW
 BEGIN
 	SELECT 	account_seq.NEXTVAL
 	INTO	:new.accountnum
+	FROM 	dual;
+END;
+/
+
+CREATE SEQUENCE transaction_seq START WITH 111;
+
+CREATE OR REPLACE TRIGGER transaction_bid
+BEFORE INSERT ON transaction
+FOR EACH ROW
+BEGIN
+	SELECT 	transaction_seq.NEXTVAL
+	INTO	:new.transNum
 	FROM 	dual;
 END;
 /

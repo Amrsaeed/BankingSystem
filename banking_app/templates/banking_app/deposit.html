@@ -1,0 +1,46 @@
+<h1>Deposit Money </h1>
+
+
+
+{% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
+
+<style>
+table, th, td {
+    border: 1px solid black;
+}
+table#t01 ,tr#t01 , td#t01{
+        border : none;
+}
+
+</style>
+
+<h2>Account Mini Summary</h2>
+<table style="width:100%">
+    <tr>
+       <th>Account Number</th>
+        <th>Account Type</th>
+        <th>Balance</th>
+        <th>Currency</th>
+    </tr>
+    <tr>
+       <td>{{ acc.accountnum }}</td>
+        <td>{{ acc.accounttype.name }}</td>
+        <td>{{ acc.balance }}</td>
+        <td>{{ acc.currency.abbreviation }}</td>
+    </tr>
+</table>
+
+<form action="{% url 'banking_system:deposit' %}" method="post">
+    {% csrf_token %}
+        <table id="t01">
+            <tr id="t01">
+                <td id="t01"><label for="amount">Amount Deposited:</label></td>
+                <td id="t01"><input id="amount" name="amount"
+                           type="number" class="form-control"></td>
+            </tr>
+        </table>
+<input type="submit" value="Deposit" />
+</form>
+
+
+<a href={% url 'banking_system:user_portal' %}>Back to Portal</a>

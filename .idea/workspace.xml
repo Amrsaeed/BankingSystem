@@ -1,7 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="25435c7e-9f90-41ae-8dbc-2febd4882de0" name="Default" comment="" />
+    <list default="true" id="25435c7e-9f90-41ae-8dbc-2febd4882de0" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/banking_app/templates/banking_app/deposit.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/banking_app/templates/banking_app/summary.html" afterPath="$PROJECT_DIR$/banking_app/templates/banking_app/summary.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/banking_app/views.py" afterPath="$PROJECT_DIR$/banking_app/views.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/schema.sql" afterPath="$PROJECT_DIR$/schema.sql" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -25,24 +31,70 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="views.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="views.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/banking_app/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1950">
-              <caret line="130" column="62" lean-forward="false" selection-start-line="130" selection-start-column="62" selection-end-line="130" selection-end-column="62" />
+            <state relative-caret-position="15">
+              <caret line="136" column="21" lean-forward="true" selection-start-line="136" selection-start-column="21" selection-end-line="136" selection-end-column="21" />
               <folding>
                 <element signature="e#0#54#0" expanded="true" />
+                <marker date="1494959984962" expanded="true" signature="528:585" ph="SELECT * fro... users" />
+                <marker date="1494959984962" expanded="true" signature="1362:1405" ph="INSERT INTO customer... " />
+                <marker date="1494959984962" expanded="true" signature="1592:1646" ph="INSERT INTO users... " />
+                <marker date="1494959984962" expanded="true" signature="1793:1830" ph="INSERT INTO phonenumber... " />
+                <marker date="1494959984962" expanded="true" signature="1964:2001" ph="INSERT INTO phonenumber... " />
+                <marker date="1494959984962" expanded="true" signature="2109:2166" ph="SELECT * fro... users" />
+                <marker date="1494959984962" expanded="true" signature="2435:2468" ph="SELECT abbre... currency" />
+                <marker date="1494959984962" expanded="true" signature="2556:2581" ph="SELECT * FRO... accounttype" />
+                <marker date="1494959984962" expanded="true" signature="2663:2694" ph="SELECT * FRO... users" />
+                <marker date="1494959984962" expanded="true" signature="3108:3166" ph="INSERT INTO account... " />
+                <marker date="1494959984962" expanded="true" signature="3455:3486" ph="SELECT * FRO... users" />
+                <marker date="1494959984962" expanded="true" signature="3627:3668" ph="SELECT * FRO... account" />
+                <marker date="1494959984962" expanded="true" signature="4529:4560" ph="SELECT * fro... users" />
+                <marker date="1494959984962" expanded="true" signature="4933:4958" ph="SELECT * fro... accounttype" />
+                <marker date="1494959984962" expanded="true" signature="5516:5636" ph="UPDATE accou... " />
+                <marker date="1494959984962" expanded="true" signature="5659:5785" ph="UPDATE accou... " />
+                <marker date="1494959984962" expanded="true" signature="5808:5931" ph="UPDATE accou... " />
+                <marker date="1494959984962" expanded="true" signature="5983:6008" ph="SELECT * fro... accounttype" />
+                <marker date="1494959984962" expanded="true" signature="6277:6319" ph="SELECT * fro... customer" />
+                <marker date="1494959984962" expanded="true" signature="6770:6792" ph="SELECT * fro... customer" />
+                <marker date="1494959984962" expanded="true" signature="7009:7050" ph="SELECT * FRO... account" />
+                <marker date="1494959984962" expanded="true" signature="7291:7332" ph="SELECT * FRO... account" />
+                <marker date="1494959984962" expanded="true" signature="7450:7668" ph="SELECT * FRO... transaction" />
+                <marker date="1494959984962" expanded="true" signature="8088:8129" ph="SELECT * FRO... account" />
+                <marker date="1494959984962" expanded="true" signature="8468:8521" ph="UPDATE accou... " />
+                <marker date="1494959984962" expanded="true" signature="8614:8644" ph="INSERT into balance... " />
+                <marker date="1494959984962" expanded="true" signature="8614:8687" ph="INSERT INTO transaction... " />
+                <marker date="1494959984962" expanded="true" signature="9367:9443" ph="UPDATE custo... " />
+                <marker date="1494959984962" expanded="true" signature="9483:9559" ph="UPDATE custo... " />
+                <marker date="1494959984962" expanded="true" signature="9599:9675" ph="UPDATE custo... " />
+                <marker date="1494959984962" expanded="true" signature="9715:9795" ph="UPDATE custo... " />
+                <marker date="1494959984962" expanded="true" signature="10403:10432" ph="SELECT COUNT... customer" />
+                <marker date="1494959984962" expanded="true" signature="10527:10724" ph="INSERT INTO customer... " />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="summary.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="deposit.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/banking_app/templates/banking_app/deposit.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-224">
+              <caret line="12" column="0" lean-forward="false" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="summary.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/banking_app/templates/banking_app/summary.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="330">
-              <caret line="22" column="33" lean-forward="false" selection-start-line="22" selection-start-column="33" selection-end-line="22" selection-end-column="33" />
-              <folding />
+            <state relative-caret-position="211">
+              <caret line="57" column="12" lean-forward="true" selection-start-line="57" selection-start-column="12" selection-end-line="57" selection-end-column="12" />
+              <folding>
+                <marker date="1494959687506" expanded="false" signature="877:887" ph="..." />
+                <marker date="1494959687506" expanded="false" signature="1250:1260" ph="..." />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -50,8 +102,8 @@
       <file leaf-file-name="user_portal.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/banking_app/templates/banking_app/user_portal.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="210">
-              <caret line="14" column="4" lean-forward="false" selection-start-line="14" selection-start-column="4" selection-end-line="14" selection-end-column="4" />
+            <state relative-caret-position="256">
+              <caret line="32" column="7" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="32" selection-end-column="7" />
               <folding />
             </state>
           </provider>
@@ -120,8 +172,9 @@
         <option value="$PROJECT_DIR$/banking_app/templates/banking_app/create_account.html" />
         <option value="$PROJECT_DIR$/banking_app/urls.py" />
         <option value="$PROJECT_DIR$/banking_app/templates/banking_app/user_portal.html" />
-        <option value="$PROJECT_DIR$/banking_app/views.py" />
+        <option value="$PROJECT_DIR$/banking_app/templates/banking_app/deposit.html" />
         <option value="$PROJECT_DIR$/banking_app/templates/banking_app/summary.html" />
+        <option value="$PROJECT_DIR$/banking_app/views.py" />
       </list>
     </option>
   </component>
@@ -581,20 +634,45 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/banking_app/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="9" column="58" lean-forward="false" selection-start-line="9" selection-start-column="58" selection-end-line="9" selection-end-column="58" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/banking_app/views.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="e#0#54#0" expanded="true" />
+            <marker date="1494959984962" expanded="true" signature="528:585" ph="SELECT * fro... users" />
+            <marker date="1494959984962" expanded="true" signature="1362:1405" ph="INSERT INTO customer... " />
+            <marker date="1494959984962" expanded="true" signature="1592:1646" ph="INSERT INTO users... " />
+            <marker date="1494959984962" expanded="true" signature="1793:1830" ph="INSERT INTO phonenumber... " />
+            <marker date="1494959984962" expanded="true" signature="1964:2001" ph="INSERT INTO phonenumber... " />
+            <marker date="1494959984962" expanded="true" signature="2109:2166" ph="SELECT * fro... users" />
+            <marker date="1494959984962" expanded="true" signature="2435:2468" ph="SELECT abbre... currency" />
+            <marker date="1494959984962" expanded="true" signature="2556:2581" ph="SELECT * FRO... accounttype" />
+            <marker date="1494959984962" expanded="true" signature="2663:2694" ph="SELECT * FRO... users" />
+            <marker date="1494959984962" expanded="true" signature="3108:3166" ph="INSERT INTO account... " />
+            <marker date="1494959984962" expanded="true" signature="3455:3486" ph="SELECT * FRO... users" />
+            <marker date="1494959984962" expanded="true" signature="3627:3668" ph="SELECT * FRO... account" />
+            <marker date="1494959984962" expanded="true" signature="4529:4560" ph="SELECT * fro... users" />
+            <marker date="1494959984962" expanded="true" signature="4933:4958" ph="SELECT * fro... accounttype" />
+            <marker date="1494959984962" expanded="true" signature="5516:5636" ph="UPDATE accou... " />
+            <marker date="1494959984962" expanded="true" signature="5659:5785" ph="UPDATE accou... " />
+            <marker date="1494959984962" expanded="true" signature="5808:5931" ph="UPDATE accou... " />
+            <marker date="1494959984962" expanded="true" signature="5983:6008" ph="SELECT * fro... accounttype" />
+            <marker date="1494959984962" expanded="true" signature="6277:6319" ph="SELECT * fro... customer" />
+            <marker date="1494959984962" expanded="true" signature="6770:6792" ph="SELECT * fro... customer" />
+            <marker date="1494959984962" expanded="true" signature="7009:7050" ph="SELECT * FRO... account" />
+            <marker date="1494959984962" expanded="true" signature="7291:7332" ph="SELECT * FRO... account" />
+            <marker date="1494959984962" expanded="true" signature="7450:7668" ph="SELECT * FRO... transaction" />
+            <marker date="1494959984962" expanded="true" signature="8088:8129" ph="SELECT * FRO... account" />
+            <marker date="1494959984962" expanded="true" signature="8468:8521" ph="UPDATE accou... " />
+            <marker date="1494959984962" expanded="true" signature="8614:8644" ph="INSERT into balance... " />
+            <marker date="1494959984962" expanded="true" signature="8614:8687" ph="INSERT INTO transaction... " />
+            <marker date="1494959984962" expanded="true" signature="9367:9443" ph="UPDATE custo... " />
+            <marker date="1494959984962" expanded="true" signature="9483:9559" ph="UPDATE custo... " />
+            <marker date="1494959984962" expanded="true" signature="9599:9675" ph="UPDATE custo... " />
+            <marker date="1494959984962" expanded="true" signature="9715:9795" ph="UPDATE custo... " />
+            <marker date="1494959984962" expanded="true" signature="10403:10432" ph="SELECT COUNT... customer" />
+            <marker date="1494959984962" expanded="true" signature="10527:10724" ph="INSERT INTO customer... " />
           </folding>
         </state>
       </provider>
@@ -660,6 +738,39 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="e#0#54#0" expanded="true" />
+            <marker date="1494959984962" expanded="true" signature="528:585" ph="SELECT * fro... users" />
+            <marker date="1494959984962" expanded="true" signature="1362:1405" ph="INSERT INTO customer... " />
+            <marker date="1494959984962" expanded="true" signature="1592:1646" ph="INSERT INTO users... " />
+            <marker date="1494959984962" expanded="true" signature="1793:1830" ph="INSERT INTO phonenumber... " />
+            <marker date="1494959984962" expanded="true" signature="1964:2001" ph="INSERT INTO phonenumber... " />
+            <marker date="1494959984962" expanded="true" signature="2109:2166" ph="SELECT * fro... users" />
+            <marker date="1494959984962" expanded="true" signature="2435:2468" ph="SELECT abbre... currency" />
+            <marker date="1494959984962" expanded="true" signature="2556:2581" ph="SELECT * FRO... accounttype" />
+            <marker date="1494959984962" expanded="true" signature="2663:2694" ph="SELECT * FRO... users" />
+            <marker date="1494959984962" expanded="true" signature="3108:3166" ph="INSERT INTO account... " />
+            <marker date="1494959984962" expanded="true" signature="3455:3486" ph="SELECT * FRO... users" />
+            <marker date="1494959984962" expanded="true" signature="3627:3668" ph="SELECT * FRO... account" />
+            <marker date="1494959984962" expanded="true" signature="4529:4560" ph="SELECT * fro... users" />
+            <marker date="1494959984962" expanded="true" signature="4933:4958" ph="SELECT * fro... accounttype" />
+            <marker date="1494959984962" expanded="true" signature="5516:5636" ph="UPDATE accou... " />
+            <marker date="1494959984962" expanded="true" signature="5659:5785" ph="UPDATE accou... " />
+            <marker date="1494959984962" expanded="true" signature="5808:5931" ph="UPDATE accou... " />
+            <marker date="1494959984962" expanded="true" signature="5983:6008" ph="SELECT * fro... accounttype" />
+            <marker date="1494959984962" expanded="true" signature="6277:6319" ph="SELECT * fro... customer" />
+            <marker date="1494959984962" expanded="true" signature="6770:6792" ph="SELECT * fro... customer" />
+            <marker date="1494959984962" expanded="true" signature="7009:7050" ph="SELECT * FRO... account" />
+            <marker date="1494959984962" expanded="true" signature="7291:7332" ph="SELECT * FRO... account" />
+            <marker date="1494959984962" expanded="true" signature="7450:7668" ph="SELECT * FRO... transaction" />
+            <marker date="1494959984962" expanded="true" signature="8088:8129" ph="SELECT * FRO... account" />
+            <marker date="1494959984962" expanded="true" signature="8468:8521" ph="UPDATE accou... " />
+            <marker date="1494959984962" expanded="true" signature="8614:8644" ph="INSERT into balance... " />
+            <marker date="1494959984962" expanded="true" signature="8614:8687" ph="INSERT INTO transaction... " />
+            <marker date="1494959984962" expanded="true" signature="9367:9443" ph="UPDATE custo... " />
+            <marker date="1494959984962" expanded="true" signature="9483:9559" ph="UPDATE custo... " />
+            <marker date="1494959984962" expanded="true" signature="9599:9675" ph="UPDATE custo... " />
+            <marker date="1494959984962" expanded="true" signature="9715:9795" ph="UPDATE custo... " />
+            <marker date="1494959984962" expanded="true" signature="10403:10432" ph="SELECT COUNT... customer" />
+            <marker date="1494959984962" expanded="true" signature="10527:10724" ph="INSERT INTO customer... " />
           </folding>
         </state>
       </provider>
@@ -725,6 +836,39 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="e#0#54#0" expanded="true" />
+            <marker date="1494959984962" expanded="true" signature="528:585" ph="SELECT * fro... users" />
+            <marker date="1494959984962" expanded="true" signature="1362:1405" ph="INSERT INTO customer... " />
+            <marker date="1494959984962" expanded="true" signature="1592:1646" ph="INSERT INTO users... " />
+            <marker date="1494959984962" expanded="true" signature="1793:1830" ph="INSERT INTO phonenumber... " />
+            <marker date="1494959984962" expanded="true" signature="1964:2001" ph="INSERT INTO phonenumber... " />
+            <marker date="1494959984962" expanded="true" signature="2109:2166" ph="SELECT * fro... users" />
+            <marker date="1494959984962" expanded="true" signature="2435:2468" ph="SELECT abbre... currency" />
+            <marker date="1494959984962" expanded="true" signature="2556:2581" ph="SELECT * FRO... accounttype" />
+            <marker date="1494959984962" expanded="true" signature="2663:2694" ph="SELECT * FRO... users" />
+            <marker date="1494959984962" expanded="true" signature="3108:3166" ph="INSERT INTO account... " />
+            <marker date="1494959984962" expanded="true" signature="3455:3486" ph="SELECT * FRO... users" />
+            <marker date="1494959984962" expanded="true" signature="3627:3668" ph="SELECT * FRO... account" />
+            <marker date="1494959984962" expanded="true" signature="4529:4560" ph="SELECT * fro... users" />
+            <marker date="1494959984962" expanded="true" signature="4933:4958" ph="SELECT * fro... accounttype" />
+            <marker date="1494959984962" expanded="true" signature="5516:5636" ph="UPDATE accou... " />
+            <marker date="1494959984962" expanded="true" signature="5659:5785" ph="UPDATE accou... " />
+            <marker date="1494959984962" expanded="true" signature="5808:5931" ph="UPDATE accou... " />
+            <marker date="1494959984962" expanded="true" signature="5983:6008" ph="SELECT * fro... accounttype" />
+            <marker date="1494959984962" expanded="true" signature="6277:6319" ph="SELECT * fro... customer" />
+            <marker date="1494959984962" expanded="true" signature="6770:6792" ph="SELECT * fro... customer" />
+            <marker date="1494959984962" expanded="true" signature="7009:7050" ph="SELECT * FRO... account" />
+            <marker date="1494959984962" expanded="true" signature="7291:7332" ph="SELECT * FRO... account" />
+            <marker date="1494959984962" expanded="true" signature="7450:7668" ph="SELECT * FRO... transaction" />
+            <marker date="1494959984962" expanded="true" signature="8088:8129" ph="SELECT * FRO... account" />
+            <marker date="1494959984962" expanded="true" signature="8468:8521" ph="UPDATE accou... " />
+            <marker date="1494959984962" expanded="true" signature="8614:8644" ph="INSERT into balance... " />
+            <marker date="1494959984962" expanded="true" signature="8614:8687" ph="INSERT INTO transaction... " />
+            <marker date="1494959984962" expanded="true" signature="9367:9443" ph="UPDATE custo... " />
+            <marker date="1494959984962" expanded="true" signature="9483:9559" ph="UPDATE custo... " />
+            <marker date="1494959984962" expanded="true" signature="9599:9675" ph="UPDATE custo... " />
+            <marker date="1494959984962" expanded="true" signature="9715:9795" ph="UPDATE custo... " />
+            <marker date="1494959984962" expanded="true" signature="10403:10432" ph="SELECT COUNT... customer" />
+            <marker date="1494959984962" expanded="true" signature="10527:10724" ph="INSERT INTO customer... " />
           </folding>
         </state>
       </provider>
@@ -773,6 +917,39 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="e#0#54#0" expanded="true" />
+            <marker date="1494959984962" expanded="true" signature="528:585" ph="SELECT * fro... users" />
+            <marker date="1494959984962" expanded="true" signature="1362:1405" ph="INSERT INTO customer... " />
+            <marker date="1494959984962" expanded="true" signature="1592:1646" ph="INSERT INTO users... " />
+            <marker date="1494959984962" expanded="true" signature="1793:1830" ph="INSERT INTO phonenumber... " />
+            <marker date="1494959984962" expanded="true" signature="1964:2001" ph="INSERT INTO phonenumber... " />
+            <marker date="1494959984962" expanded="true" signature="2109:2166" ph="SELECT * fro... users" />
+            <marker date="1494959984962" expanded="true" signature="2435:2468" ph="SELECT abbre... currency" />
+            <marker date="1494959984962" expanded="true" signature="2556:2581" ph="SELECT * FRO... accounttype" />
+            <marker date="1494959984962" expanded="true" signature="2663:2694" ph="SELECT * FRO... users" />
+            <marker date="1494959984962" expanded="true" signature="3108:3166" ph="INSERT INTO account... " />
+            <marker date="1494959984962" expanded="true" signature="3455:3486" ph="SELECT * FRO... users" />
+            <marker date="1494959984962" expanded="true" signature="3627:3668" ph="SELECT * FRO... account" />
+            <marker date="1494959984962" expanded="true" signature="4529:4560" ph="SELECT * fro... users" />
+            <marker date="1494959984962" expanded="true" signature="4933:4958" ph="SELECT * fro... accounttype" />
+            <marker date="1494959984962" expanded="true" signature="5516:5636" ph="UPDATE accou... " />
+            <marker date="1494959984962" expanded="true" signature="5659:5785" ph="UPDATE accou... " />
+            <marker date="1494959984962" expanded="true" signature="5808:5931" ph="UPDATE accou... " />
+            <marker date="1494959984962" expanded="true" signature="5983:6008" ph="SELECT * fro... accounttype" />
+            <marker date="1494959984962" expanded="true" signature="6277:6319" ph="SELECT * fro... customer" />
+            <marker date="1494959984962" expanded="true" signature="6770:6792" ph="SELECT * fro... customer" />
+            <marker date="1494959984962" expanded="true" signature="7009:7050" ph="SELECT * FRO... account" />
+            <marker date="1494959984962" expanded="true" signature="7291:7332" ph="SELECT * FRO... account" />
+            <marker date="1494959984962" expanded="true" signature="7450:7668" ph="SELECT * FRO... transaction" />
+            <marker date="1494959984962" expanded="true" signature="8088:8129" ph="SELECT * FRO... account" />
+            <marker date="1494959984962" expanded="true" signature="8468:8521" ph="UPDATE accou... " />
+            <marker date="1494959984962" expanded="true" signature="8614:8644" ph="INSERT into balance... " />
+            <marker date="1494959984962" expanded="true" signature="8614:8687" ph="INSERT INTO transaction... " />
+            <marker date="1494959984962" expanded="true" signature="9367:9443" ph="UPDATE custo... " />
+            <marker date="1494959984962" expanded="true" signature="9483:9559" ph="UPDATE custo... " />
+            <marker date="1494959984962" expanded="true" signature="9599:9675" ph="UPDATE custo... " />
+            <marker date="1494959984962" expanded="true" signature="9715:9795" ph="UPDATE custo... " />
+            <marker date="1494959984962" expanded="true" signature="10403:10432" ph="SELECT COUNT... customer" />
+            <marker date="1494959984962" expanded="true" signature="10527:10724" ph="INSERT INTO customer... " />
           </folding>
         </state>
       </provider>
@@ -828,6 +1005,39 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="e#0#54#0" expanded="true" />
+            <marker date="1494959984962" expanded="true" signature="528:585" ph="SELECT * fro... users" />
+            <marker date="1494959984962" expanded="true" signature="1362:1405" ph="INSERT INTO customer... " />
+            <marker date="1494959984962" expanded="true" signature="1592:1646" ph="INSERT INTO users... " />
+            <marker date="1494959984962" expanded="true" signature="1793:1830" ph="INSERT INTO phonenumber... " />
+            <marker date="1494959984962" expanded="true" signature="1964:2001" ph="INSERT INTO phonenumber... " />
+            <marker date="1494959984962" expanded="true" signature="2109:2166" ph="SELECT * fro... users" />
+            <marker date="1494959984962" expanded="true" signature="2435:2468" ph="SELECT abbre... currency" />
+            <marker date="1494959984962" expanded="true" signature="2556:2581" ph="SELECT * FRO... accounttype" />
+            <marker date="1494959984962" expanded="true" signature="2663:2694" ph="SELECT * FRO... users" />
+            <marker date="1494959984962" expanded="true" signature="3108:3166" ph="INSERT INTO account... " />
+            <marker date="1494959984962" expanded="true" signature="3455:3486" ph="SELECT * FRO... users" />
+            <marker date="1494959984962" expanded="true" signature="3627:3668" ph="SELECT * FRO... account" />
+            <marker date="1494959984962" expanded="true" signature="4529:4560" ph="SELECT * fro... users" />
+            <marker date="1494959984962" expanded="true" signature="4933:4958" ph="SELECT * fro... accounttype" />
+            <marker date="1494959984962" expanded="true" signature="5516:5636" ph="UPDATE accou... " />
+            <marker date="1494959984962" expanded="true" signature="5659:5785" ph="UPDATE accou... " />
+            <marker date="1494959984962" expanded="true" signature="5808:5931" ph="UPDATE accou... " />
+            <marker date="1494959984962" expanded="true" signature="5983:6008" ph="SELECT * fro... accounttype" />
+            <marker date="1494959984962" expanded="true" signature="6277:6319" ph="SELECT * fro... customer" />
+            <marker date="1494959984962" expanded="true" signature="6770:6792" ph="SELECT * fro... customer" />
+            <marker date="1494959984962" expanded="true" signature="7009:7050" ph="SELECT * FRO... account" />
+            <marker date="1494959984962" expanded="true" signature="7291:7332" ph="SELECT * FRO... account" />
+            <marker date="1494959984962" expanded="true" signature="7450:7668" ph="SELECT * FRO... transaction" />
+            <marker date="1494959984962" expanded="true" signature="8088:8129" ph="SELECT * FRO... account" />
+            <marker date="1494959984962" expanded="true" signature="8468:8521" ph="UPDATE accou... " />
+            <marker date="1494959984962" expanded="true" signature="8614:8644" ph="INSERT into balance... " />
+            <marker date="1494959984962" expanded="true" signature="8614:8687" ph="INSERT INTO transaction... " />
+            <marker date="1494959984962" expanded="true" signature="9367:9443" ph="UPDATE custo... " />
+            <marker date="1494959984962" expanded="true" signature="9483:9559" ph="UPDATE custo... " />
+            <marker date="1494959984962" expanded="true" signature="9599:9675" ph="UPDATE custo... " />
+            <marker date="1494959984962" expanded="true" signature="9715:9795" ph="UPDATE custo... " />
+            <marker date="1494959984962" expanded="true" signature="10403:10432" ph="SELECT COUNT... customer" />
+            <marker date="1494959984962" expanded="true" signature="10527:10724" ph="INSERT INTO customer... " />
           </folding>
         </state>
       </provider>
@@ -953,29 +1163,73 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/banking_app/views.py">
+    <entry file="file://$PROJECT_DIR$/banking_app/templates/banking_app/user_portal.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1950">
-          <caret line="130" column="62" lean-forward="false" selection-start-line="130" selection-start-column="62" selection-end-line="130" selection-end-column="62" />
-          <folding>
-            <element signature="e#0#54#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="256">
+          <caret line="32" column="7" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="32" selection-end-column="7" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/banking_app/templates/banking_app/user_portal.html">
+    <entry file="file://$PROJECT_DIR$/banking_app/templates/banking_app/deposit.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="14" column="4" lean-forward="false" selection-start-line="14" selection-start-column="4" selection-end-line="14" selection-end-column="4" />
+        <state relative-caret-position="-224">
+          <caret line="12" column="0" lean-forward="false" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/banking_app/templates/banking_app/summary.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="22" column="33" lean-forward="false" selection-start-line="22" selection-start-column="33" selection-end-line="22" selection-end-column="33" />
-          <folding />
+        <state relative-caret-position="211">
+          <caret line="57" column="12" lean-forward="true" selection-start-line="57" selection-start-column="12" selection-end-line="57" selection-end-column="12" />
+          <folding>
+            <marker date="1494959687506" expanded="false" signature="877:887" ph="..." />
+            <marker date="1494959687506" expanded="false" signature="1250:1260" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/banking_app/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="136" column="21" lean-forward="true" selection-start-line="136" selection-start-column="21" selection-end-line="136" selection-end-column="21" />
+          <folding>
+            <element signature="e#0#54#0" expanded="true" />
+            <marker date="1494959984962" expanded="true" signature="528:585" ph="SELECT * fro... users" />
+            <marker date="1494959984962" expanded="true" signature="1362:1405" ph="INSERT INTO customer... " />
+            <marker date="1494959984962" expanded="true" signature="1592:1646" ph="INSERT INTO users... " />
+            <marker date="1494959984962" expanded="true" signature="1793:1830" ph="INSERT INTO phonenumber... " />
+            <marker date="1494959984962" expanded="true" signature="1964:2001" ph="INSERT INTO phonenumber... " />
+            <marker date="1494959984962" expanded="true" signature="2109:2166" ph="SELECT * fro... users" />
+            <marker date="1494959984962" expanded="true" signature="2435:2468" ph="SELECT abbre... currency" />
+            <marker date="1494959984962" expanded="true" signature="2556:2581" ph="SELECT * FRO... accounttype" />
+            <marker date="1494959984962" expanded="true" signature="2663:2694" ph="SELECT * FRO... users" />
+            <marker date="1494959984962" expanded="true" signature="3108:3166" ph="INSERT INTO account... " />
+            <marker date="1494959984962" expanded="true" signature="3455:3486" ph="SELECT * FRO... users" />
+            <marker date="1494959984962" expanded="true" signature="3627:3668" ph="SELECT * FRO... account" />
+            <marker date="1494959984962" expanded="true" signature="4529:4560" ph="SELECT * fro... users" />
+            <marker date="1494959984962" expanded="true" signature="4933:4958" ph="SELECT * fro... accounttype" />
+            <marker date="1494959984962" expanded="true" signature="5516:5636" ph="UPDATE accou... " />
+            <marker date="1494959984962" expanded="true" signature="5659:5785" ph="UPDATE accou... " />
+            <marker date="1494959984962" expanded="true" signature="5808:5931" ph="UPDATE accou... " />
+            <marker date="1494959984962" expanded="true" signature="5983:6008" ph="SELECT * fro... accounttype" />
+            <marker date="1494959984962" expanded="true" signature="6277:6319" ph="SELECT * fro... customer" />
+            <marker date="1494959984962" expanded="true" signature="6770:6792" ph="SELECT * fro... customer" />
+            <marker date="1494959984962" expanded="true" signature="7009:7050" ph="SELECT * FRO... account" />
+            <marker date="1494959984962" expanded="true" signature="7291:7332" ph="SELECT * FRO... account" />
+            <marker date="1494959984962" expanded="true" signature="7450:7668" ph="SELECT * FRO... transaction" />
+            <marker date="1494959984962" expanded="true" signature="8088:8129" ph="SELECT * FRO... account" />
+            <marker date="1494959984962" expanded="true" signature="8468:8521" ph="UPDATE accou... " />
+            <marker date="1494959984962" expanded="true" signature="8614:8644" ph="INSERT into balance... " />
+            <marker date="1494959984962" expanded="true" signature="8614:8687" ph="INSERT INTO transaction... " />
+            <marker date="1494959984962" expanded="true" signature="9367:9443" ph="UPDATE custo... " />
+            <marker date="1494959984962" expanded="true" signature="9483:9559" ph="UPDATE custo... " />
+            <marker date="1494959984962" expanded="true" signature="9599:9675" ph="UPDATE custo... " />
+            <marker date="1494959984962" expanded="true" signature="9715:9795" ph="UPDATE custo... " />
+            <marker date="1494959984962" expanded="true" signature="10403:10432" ph="SELECT COUNT... customer" />
+            <marker date="1494959984962" expanded="true" signature="10527:10724" ph="INSERT INTO customer... " />
+          </folding>
         </state>
       </provider>
     </entry>

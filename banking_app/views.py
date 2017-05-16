@@ -138,11 +138,18 @@ def summary(request):
     print(request.session['account_num'])
     acc = list(Account.objects.raw("SELECT * FROM account WHERE accountnum=%s",
                                    [request.session['account_num']]))[0]
+    if not request.POST:
+        return render(request, 'banking_app/summary.html', context={
+            'acc': acc,
+        })
+    acc = list(Account.objects.raw("SELECT * FROM account WHERE accountnum=%s",
+                                   [request.session['account_num']]))[0]
     trans = list(Transaction.objects.raw("SELECT * FROM transaction "
                                          "WHERE accountnum =%s AND to_date(transdate)BETWEEN "
-                                         "to_date(%s,DD-MON-YY) AND to_date(%s,DD-MON-YY)",
+                                         "to_date(%s,'yyyy-mm-dd') AND to_date(%s,'yyyy-mm-dd')",
                                          [request.session['account_num'],request.POST['start'],
                                           request.POST['end']]))
+    print(trans)
     return render(request,'banking_app/summary.html',context={
         'acc':acc,
         'trans': trans,
@@ -152,8 +159,19 @@ def withdraw(request):
     return HttpResponse("Withdraw money.")
 
 def deposit(request):
-
-    return HttpResponse("deposit money.")
+    acc = list(Account.objects.raw("SELECT * FROM account WHERE accountnum=%s",
+                                   [request.session['account_num']]))[0]
+    if not request.POST:
+        return render(request,'banking_app/deposit.html',context={
+            'acc': acc,
+        })
+    with connection.cursor() as cursor:
+        new_bal = str(float(request.POST['amount'])+float(acc.balance))
+        cursor.execute("UPDATE account SET balance = %s WHERE accountnum = %s",
+                       [new_bal, request.session['account_num']])
+        cursor.execute("INSERT INTO transaction VALUES(transaction_seq.nextval,'d',SYSDATE,%s,%s)",
+                       [request.POST['amount'], request.session['account_num']])
+    return HttpResponseRedirect(reverse('banking_system:user_portal'))
 
 def transfer(request):
     return HttpResponse("Transfer money.")
