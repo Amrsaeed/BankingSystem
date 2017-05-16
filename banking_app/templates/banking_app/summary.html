@@ -3,7 +3,11 @@
 
 
 {% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
-
+<style>
+table, th, td {
+    border: 1px solid black;
+}
+</style>
 
 <table style="width:100%">
     <tr>
@@ -14,12 +18,12 @@
     </tr>
     <tr>
        <td>{{ acc.accountnum }}</td>
-        <td>{{ acc.accounttype }}</td>
+        <td>{{ acc.accounttype.name }}</td>
         <td>{{ acc.balance }}</td>
-        <td>{{ acc.currency }}</td>
+        <td>{{ acc.currency.abbreviation }}</td>
     </tr>
 </table>
-<h2>Transactions</h2>
+<h1>Transactions</h1>
 <table style="width:100%">
    <tr>
        <th>transaction number</th>
