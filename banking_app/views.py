@@ -78,6 +78,11 @@ def user_portal(request):
         return render(request,'banking_app/user_portal.html',context={
             'accs' : accounts,
         })
+    if request.POST.get('account', -1) == -1:
+       return render(request, template_name='banking_app/user_portal.html', context={
+            'error_message': "No Accounts Available",
+        })
+
     request.session['account_num'] = request.POST['account']
 
     if request.POST['action'] == 'Withdraw':

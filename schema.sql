@@ -110,7 +110,7 @@ CREATE OR REPLACE TRIGGER transaction_bid
 BEFORE INSERT ON transaction
 FOR EACH ROW
 BEGIN
-	SELECT 	transaction_seq.NEXTVAL
+	SELECT 	tran_seq.NEXTVAL
 	INTO	:new.transNum
 	FROM 	dual;
 END;
