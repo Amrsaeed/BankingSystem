@@ -1,0 +1,1237 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="25435c7e-9f90-41ae-8dbc-2febd4882de0" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/banking_app/templates/banking_app/deposit.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/banking_app/templates/banking_app/summary.html" afterPath="$PROJECT_DIR$/banking_app/templates/banking_app/summary.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/banking_app/views.py" afterPath="$PROJECT_DIR$/banking_app/views.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/schema.sql" afterPath="$PROJECT_DIR$/schema.sql" />
+    </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="TRACKING_ENABLED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CreatePatchCommitExecutor">
+    <option name="PATCH_PATH" value="" />
+  </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="urls.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/banking_app/urls.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="15">
+              <caret line="1" column="0" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="views.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/banking_app/views.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="15">
+              <caret line="136" column="21" lean-forward="true" selection-start-line="136" selection-start-column="21" selection-end-line="136" selection-end-column="21" />
+              <folding>
+                <element signature="e#0#54#0" expanded="true" />
+                <marker date="1494959984962" expanded="true" signature="528:585" ph="SELECT * fro... users" />
+                <marker date="1494959984962" expanded="true" signature="1362:1405" ph="INSERT INTO customer... " />
+                <marker date="1494959984962" expanded="true" signature="1592:1646" ph="INSERT INTO users... " />
+                <marker date="1494959984962" expanded="true" signature="1793:1830" ph="INSERT INTO phonenumber... " />
+                <marker date="1494959984962" expanded="true" signature="1964:2001" ph="INSERT INTO phonenumber... " />
+                <marker date="1494959984962" expanded="true" signature="2109:2166" ph="SELECT * fro... users" />
+                <marker date="1494959984962" expanded="true" signature="2435:2468" ph="SELECT abbre... currency" />
+                <marker date="1494959984962" expanded="true" signature="2556:2581" ph="SELECT * FRO... accounttype" />
+                <marker date="1494959984962" expanded="true" signature="2663:2694" ph="SELECT * FRO... users" />
+                <marker date="1494959984962" expanded="true" signature="3108:3166" ph="INSERT INTO account... " />
+                <marker date="1494959984962" expanded="true" signature="3455:3486" ph="SELECT * FRO... users" />
+                <marker date="1494959984962" expanded="true" signature="3627:3668" ph="SELECT * FRO... account" />
+                <marker date="1494959984962" expanded="true" signature="4529:4560" ph="SELECT * fro... users" />
+                <marker date="1494959984962" expanded="true" signature="4933:4958" ph="SELECT * fro... accounttype" />
+                <marker date="1494959984962" expanded="true" signature="5516:5636" ph="UPDATE accou... " />
+                <marker date="1494959984962" expanded="true" signature="5659:5785" ph="UPDATE accou... " />
+                <marker date="1494959984962" expanded="true" signature="5808:5931" ph="UPDATE accou... " />
+                <marker date="1494959984962" expanded="true" signature="5983:6008" ph="SELECT * fro... accounttype" />
+                <marker date="1494959984962" expanded="true" signature="6277:6319" ph="SELECT * fro... customer" />
+                <marker date="1494959984962" expanded="true" signature="6770:6792" ph="SELECT * fro... customer" />
+                <marker date="1494959984962" expanded="true" signature="7009:7050" ph="SELECT * FRO... account" />
+                <marker date="1494959984962" expanded="true" signature="7291:7332" ph="SELECT * FRO... account" />
+                <marker date="1494959984962" expanded="true" signature="7450:7668" ph="SELECT * FRO... transaction" />
+                <marker date="1494959984962" expanded="true" signature="8088:8129" ph="SELECT * FRO... account" />
+                <marker date="1494959984962" expanded="true" signature="8468:8521" ph="UPDATE accou... " />
+                <marker date="1494959984962" expanded="true" signature="8614:8644" ph="INSERT into balance... " />
+                <marker date="1494959984962" expanded="true" signature="8614:8687" ph="INSERT INTO transaction... " />
+                <marker date="1494959984962" expanded="true" signature="9367:9443" ph="UPDATE custo... " />
+                <marker date="1494959984962" expanded="true" signature="9483:9559" ph="UPDATE custo... " />
+                <marker date="1494959984962" expanded="true" signature="9599:9675" ph="UPDATE custo... " />
+                <marker date="1494959984962" expanded="true" signature="9715:9795" ph="UPDATE custo... " />
+                <marker date="1494959984962" expanded="true" signature="10403:10432" ph="SELECT COUNT... customer" />
+                <marker date="1494959984962" expanded="true" signature="10527:10724" ph="INSERT INTO customer... " />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="deposit.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/banking_app/templates/banking_app/deposit.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-224">
+              <caret line="12" column="0" lean-forward="false" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="summary.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/banking_app/templates/banking_app/summary.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="211">
+              <caret line="57" column="12" lean-forward="true" selection-start-line="57" selection-start-column="12" selection-end-line="57" selection-end-column="12" />
+              <folding>
+                <marker date="1494959687506" expanded="false" signature="877:887" ph="..." />
+                <marker date="1494959687506" expanded="false" signature="1250:1260" ph="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="user_portal.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/banking_app/templates/banking_app/user_portal.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="256">
+              <caret line="32" column="7" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="32" selection-end-column="7" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="manage_account_type.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/banking_app/templates/banking_app/manage_account_type.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="285">
+              <caret line="19" column="9" lean-forward="false" selection-start-line="19" selection-start-column="9" selection-end-line="19" selection-end-column="9" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="create_account.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/banking_app/templates/banking_app/create_account.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="465">
+              <caret line="31" column="0" lean-forward="false" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="models.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/banking_app/models.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="2970">
+              <caret line="200" column="13" lean-forward="false" selection-start-line="200" selection-start-column="13" selection-end-line="200" selection-end-column="13" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="create_user.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/banking_app/templates/banking_app/create_user.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="90">
+              <caret line="6" column="43" lean-forward="false" selection-start-line="6" selection-start-column="43" selection-end-line="6" selection-end-column="43" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="HTML File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/BankingSystem/urls.py" />
+        <option value="$PROJECT_DIR$/banking_app/templates/banking_app/base.html" />
+        <option value="$PROJECT_DIR$/banking_app/templates/CreateUser.html" />
+        <option value="$PROJECT_DIR$/banking_app/templates/banking_app/login_page.html" />
+        <option value="$PROJECT_DIR$/banking_app/templates/banking_app/create_user.html" />
+        <option value="$PROJECT_DIR$/banking_app/templates/banking_app/create_account.html" />
+        <option value="$PROJECT_DIR$/banking_app/urls.py" />
+        <option value="$PROJECT_DIR$/banking_app/templates/banking_app/user_portal.html" />
+        <option value="$PROJECT_DIR$/banking_app/templates/banking_app/deposit.html" />
+        <option value="$PROJECT_DIR$/banking_app/templates/banking_app/summary.html" />
+        <option value="$PROJECT_DIR$/banking_app/views.py" />
+      </list>
+    </option>
+  </component>
+  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsGulpfileManager">
+    <detection-done>true</detection-done>
+    <sorting>DEFINITION_ORDER</sorting>
+  </component>
+  <component name="ProjectFrameBounds">
+    <option name="x" value="65" />
+    <option name="y" value="24" />
+    <option name="width" value="1301" />
+    <option name="height" value="744" />
+  </component>
+  <component name="ProjectView">
+    <navigator currentView="ProjectPane" proportions="" version="1">
+      <flattenPackages />
+      <showMembers />
+      <showModules />
+      <showLibraryContents />
+      <hideEmptyPackages />
+      <abbreviatePackageNames />
+      <autoscrollToSource />
+      <autoscrollFromSource />
+      <sortByType />
+      <manualOrder />
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="Scope" />
+      <pane id="ProjectPane">
+        <subPane>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="BankingSystem" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="BankingSystem" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="BankingSystem" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="BankingSystem" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="banking_app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="BankingSystem" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="BankingSystem" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="banking_app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="templates" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="banking_app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="BankingSystem" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="BankingSystem" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="BankingSystem" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
+      <pane id="Scratches" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="js.eslint.eslintPackage" value="" />
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
+  </component>
+  <component name="RunManager" selected="Django server.BankingSystem">
+    <configuration default="true" type="DjangoTestsConfigurationType" factoryName="Django tests">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="BankingSystem" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="TARGET" value="" />
+      <option name="SETTINGS_FILE" value="" />
+      <option name="CUSTOM_SETTINGS" value="false" />
+      <option name="USE_OPTIONS" value="false" />
+      <option name="OPTIONS" value="" />
+      <method />
+    </configuration>
+    <configuration default="true" type="JavaScriptTestRunnerProtractor" factoryName="Protractor">
+      <config-file value="" />
+      <node-interpreter value="project" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug">
+      <method />
+    </configuration>
+    <configuration default="true" type="PyBehaveRunConfigurationType" factoryName="Behave">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="BankingSystem" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="ADDITIONAL_ARGS" value="" />
+      <method />
+    </configuration>
+    <configuration default="true" type="PyLettuceRunConfigurationType" factoryName="Lettuce">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="BankingSystem" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="ADDITIONAL_ARGS" value="" />
+      <method />
+    </configuration>
+    <configuration default="true" type="Python.DjangoServer" factoryName="Django server">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="BankingSystem" />
+      <option name="launchJavascriptDebuger" value="false" />
+      <option name="port" value="8000" />
+      <option name="host" value="" />
+      <option name="additionalOptions" value="" />
+      <option name="browserUrl" value="" />
+      <option name="runTestServer" value="false" />
+      <option name="runNoReload" value="false" />
+      <option name="useCustomRunCommand" value="false" />
+      <option name="customRunCommand" value="" />
+      <method />
+    </configuration>
+    <configuration default="true" type="PythonConfigurationType" factoryName="Python">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="BankingSystem" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <method />
+    </configuration>
+    <configuration default="true" type="Tox" factoryName="Tox">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <module name="BankingSystem" />
+      <method />
+    </configuration>
+    <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
+      <node-interpreter>project</node-interpreter>
+      <node-options />
+      <gulpfile />
+      <tasks />
+      <arguments />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="js.build_tools.npm" factoryName="npm">
+      <command value="run" />
+      <scripts />
+      <node-interpreter value="project" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="tests" factoryName="Attests">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="BankingSystem" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="" />
+      <option name="CLASS_NAME" value="" />
+      <option name="METHOD_NAME" value="" />
+      <option name="FOLDER_NAME" value="" />
+      <option name="TEST_TYPE" value="TEST_SCRIPT" />
+      <option name="PATTERN" value="" />
+      <option name="USE_PATTERN" value="false" />
+      <method />
+    </configuration>
+    <configuration default="true" type="tests" factoryName="Doctests">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="BankingSystem" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="" />
+      <option name="CLASS_NAME" value="" />
+      <option name="METHOD_NAME" value="" />
+      <option name="FOLDER_NAME" value="" />
+      <option name="TEST_TYPE" value="TEST_SCRIPT" />
+      <option name="PATTERN" value="" />
+      <option name="USE_PATTERN" value="false" />
+      <method />
+    </configuration>
+    <configuration default="true" type="tests" factoryName="Nosetests">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="BankingSystem" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="" />
+      <option name="CLASS_NAME" value="" />
+      <option name="METHOD_NAME" value="" />
+      <option name="FOLDER_NAME" value="" />
+      <option name="TEST_TYPE" value="TEST_SCRIPT" />
+      <option name="PATTERN" value="" />
+      <option name="USE_PATTERN" value="false" />
+      <option name="PARAMS" value="" />
+      <option name="USE_PARAM" value="false" />
+      <method />
+    </configuration>
+    <configuration default="true" type="tests" factoryName="Unittests">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="BankingSystem" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="" />
+      <option name="CLASS_NAME" value="" />
+      <option name="METHOD_NAME" value="" />
+      <option name="FOLDER_NAME" value="" />
+      <option name="TEST_TYPE" value="TEST_SCRIPT" />
+      <option name="PATTERN" value="" />
+      <option name="USE_PATTERN" value="false" />
+      <option name="PUREUNITTEST" value="true" />
+      <option name="PARAMS" value="" />
+      <option name="USE_PARAM" value="false" />
+      <method />
+    </configuration>
+    <configuration default="true" type="tests" factoryName="py.test">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="BankingSystem" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="" />
+      <option name="CLASS_NAME" value="" />
+      <option name="METHOD_NAME" value="" />
+      <option name="FOLDER_NAME" value="" />
+      <option name="TEST_TYPE" value="TEST_SCRIPT" />
+      <option name="PATTERN" value="" />
+      <option name="USE_PATTERN" value="false" />
+      <option name="testToRun" value="" />
+      <option name="keywords" value="" />
+      <option name="params" value="" />
+      <option name="USE_PARAM" value="false" />
+      <option name="USE_KEYWORD" value="false" />
+      <method />
+    </configuration>
+    <configuration default="false" name="BankingSystem" type="Python.DjangoServer" factoryName="Django server">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+        <env name="DJANGO_SETTINGS_MODULE" value="BankingSystem.settings" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="BankingSystem" />
+      <option name="launchJavascriptDebuger" value="false" />
+      <option name="port" value="8000" />
+      <option name="host" value="" />
+      <option name="additionalOptions" value="" />
+      <option name="browserUrl" value="" />
+      <option name="runTestServer" value="false" />
+      <option name="runNoReload" value="false" />
+      <option name="useCustomRunCommand" value="false" />
+      <option name="customRunCommand" value="" />
+      <method />
+    </configuration>
+    <list size="1">
+      <item index="0" class="java.lang.String" itemvalue="Django server.BankingSystem" />
+    </list>
+  </component>
+  <component name="ShelveChangesManager" show_recycled="false">
+    <option name="remove_strategy" value="false" />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="25435c7e-9f90-41ae-8dbc-2febd4882de0" name="Default" comment="" />
+      <created>1494651195172</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1494651195172</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="65" y="24" width="1301" height="744" extended-state="6" />
+    <editor active="true" />
+    <layout>
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2756972" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32847896" sideWeight="0.50278884" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32847896" sideWeight="0.49721116" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32847896" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39967638" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+    </layout>
+    <layout-to-restore>
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32847896" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2613546" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39967638" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+    </layout-to-restore>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="processedProjectFiles" value="true" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="RECENTLY_FILTERED_USER_GROUPS">
+                <collection />
+              </option>
+              <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
+                <collection />
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="LOCAL_CHANGES_DETAILS_PREVIEW_SHOWN" value="true" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager />
+    <watches-manager />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/banking_app/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#54#0" expanded="true" />
+            <marker date="1494959984962" expanded="true" signature="528:585" ph="SELECT * fro... users" />
+            <marker date="1494959984962" expanded="true" signature="1362:1405" ph="INSERT INTO customer... " />
+            <marker date="1494959984962" expanded="true" signature="1592:1646" ph="INSERT INTO users... " />
+            <marker date="1494959984962" expanded="true" signature="1793:1830" ph="INSERT INTO phonenumber... " />
+            <marker date="1494959984962" expanded="true" signature="1964:2001" ph="INSERT INTO phonenumber... " />
+            <marker date="1494959984962" expanded="true" signature="2109:2166" ph="SELECT * fro... users" />
+            <marker date="1494959984962" expanded="true" signature="2435:2468" ph="SELECT abbre... currency" />
+            <marker date="1494959984962" expanded="true" signature="2556:2581" ph="SELECT * FRO... accounttype" />
+            <marker date="1494959984962" expanded="true" signature="2663:2694" ph="SELECT * FRO... users" />
+            <marker date="1494959984962" expanded="true" signature="3108:3166" ph="INSERT INTO account... " />
+            <marker date="1494959984962" expanded="true" signature="3455:3486" ph="SELECT * FRO... users" />
+            <marker date="1494959984962" expanded="true" signature="3627:3668" ph="SELECT * FRO... account" />
+            <marker date="1494959984962" expanded="true" signature="4529:4560" ph="SELECT * fro... users" />
+            <marker date="1494959984962" expanded="true" signature="4933:4958" ph="SELECT * fro... accounttype" />
+            <marker date="1494959984962" expanded="true" signature="5516:5636" ph="UPDATE accou... " />
+            <marker date="1494959984962" expanded="true" signature="5659:5785" ph="UPDATE accou... " />
+            <marker date="1494959984962" expanded="true" signature="5808:5931" ph="UPDATE accou... " />
+            <marker date="1494959984962" expanded="true" signature="5983:6008" ph="SELECT * fro... accounttype" />
+            <marker date="1494959984962" expanded="true" signature="6277:6319" ph="SELECT * fro... customer" />
+            <marker date="1494959984962" expanded="true" signature="6770:6792" ph="SELECT * fro... customer" />
+            <marker date="1494959984962" expanded="true" signature="7009:7050" ph="SELECT * FRO... account" />
+            <marker date="1494959984962" expanded="true" signature="7291:7332" ph="SELECT * FRO... account" />
+            <marker date="1494959984962" expanded="true" signature="7450:7668" ph="SELECT * FRO... transaction" />
+            <marker date="1494959984962" expanded="true" signature="8088:8129" ph="SELECT * FRO... account" />
+            <marker date="1494959984962" expanded="true" signature="8468:8521" ph="UPDATE accou... " />
+            <marker date="1494959984962" expanded="true" signature="8614:8644" ph="INSERT into balance... " />
+            <marker date="1494959984962" expanded="true" signature="8614:8687" ph="INSERT INTO transaction... " />
+            <marker date="1494959984962" expanded="true" signature="9367:9443" ph="UPDATE custo... " />
+            <marker date="1494959984962" expanded="true" signature="9483:9559" ph="UPDATE custo... " />
+            <marker date="1494959984962" expanded="true" signature="9599:9675" ph="UPDATE custo... " />
+            <marker date="1494959984962" expanded="true" signature="9715:9795" ph="UPDATE custo... " />
+            <marker date="1494959984962" expanded="true" signature="10403:10432" ph="SELECT COUNT... customer" />
+            <marker date="1494959984962" expanded="true" signature="10527:10724" ph="INSERT INTO customer... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/banking_app/templates/banking_app/login_page.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="6" column="40" lean-forward="false" selection-start-line="6" selection-start-column="40" selection-end-line="6" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/banking_app/templates/banking_app/user_portal.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="12" column="28" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="33" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/banking_app/templates/banking_app/create_account.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="465">
+          <caret line="31" column="0" lean-forward="false" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/banking_app/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2970">
+          <caret line="200" column="13" lean-forward="false" selection-start-line="200" selection-start-column="13" selection-end-line="200" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/banking_app/templates/banking_app/create_user.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="6" column="43" lean-forward="false" selection-start-line="6" selection-start-column="43" selection-end-line="6" selection-end-column="43" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/BankingSystem/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="19" column="53" lean-forward="false" selection-start-line="19" selection-start-column="53" selection-end-line="19" selection-end-column="53" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/banking_app/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="9" column="58" lean-forward="false" selection-start-line="9" selection-start-column="58" selection-end-line="9" selection-end-column="58" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/banking_app/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#54#0" expanded="true" />
+            <marker date="1494959984962" expanded="true" signature="528:585" ph="SELECT * fro... users" />
+            <marker date="1494959984962" expanded="true" signature="1362:1405" ph="INSERT INTO customer... " />
+            <marker date="1494959984962" expanded="true" signature="1592:1646" ph="INSERT INTO users... " />
+            <marker date="1494959984962" expanded="true" signature="1793:1830" ph="INSERT INTO phonenumber... " />
+            <marker date="1494959984962" expanded="true" signature="1964:2001" ph="INSERT INTO phonenumber... " />
+            <marker date="1494959984962" expanded="true" signature="2109:2166" ph="SELECT * fro... users" />
+            <marker date="1494959984962" expanded="true" signature="2435:2468" ph="SELECT abbre... currency" />
+            <marker date="1494959984962" expanded="true" signature="2556:2581" ph="SELECT * FRO... accounttype" />
+            <marker date="1494959984962" expanded="true" signature="2663:2694" ph="SELECT * FRO... users" />
+            <marker date="1494959984962" expanded="true" signature="3108:3166" ph="INSERT INTO account... " />
+            <marker date="1494959984962" expanded="true" signature="3455:3486" ph="SELECT * FRO... users" />
+            <marker date="1494959984962" expanded="true" signature="3627:3668" ph="SELECT * FRO... account" />
+            <marker date="1494959984962" expanded="true" signature="4529:4560" ph="SELECT * fro... users" />
+            <marker date="1494959984962" expanded="true" signature="4933:4958" ph="SELECT * fro... accounttype" />
+            <marker date="1494959984962" expanded="true" signature="5516:5636" ph="UPDATE accou... " />
+            <marker date="1494959984962" expanded="true" signature="5659:5785" ph="UPDATE accou... " />
+            <marker date="1494959984962" expanded="true" signature="5808:5931" ph="UPDATE accou... " />
+            <marker date="1494959984962" expanded="true" signature="5983:6008" ph="SELECT * fro... accounttype" />
+            <marker date="1494959984962" expanded="true" signature="6277:6319" ph="SELECT * fro... customer" />
+            <marker date="1494959984962" expanded="true" signature="6770:6792" ph="SELECT * fro... customer" />
+            <marker date="1494959984962" expanded="true" signature="7009:7050" ph="SELECT * FRO... account" />
+            <marker date="1494959984962" expanded="true" signature="7291:7332" ph="SELECT * FRO... account" />
+            <marker date="1494959984962" expanded="true" signature="7450:7668" ph="SELECT * FRO... transaction" />
+            <marker date="1494959984962" expanded="true" signature="8088:8129" ph="SELECT * FRO... account" />
+            <marker date="1494959984962" expanded="true" signature="8468:8521" ph="UPDATE accou... " />
+            <marker date="1494959984962" expanded="true" signature="8614:8644" ph="INSERT into balance... " />
+            <marker date="1494959984962" expanded="true" signature="8614:8687" ph="INSERT INTO transaction... " />
+            <marker date="1494959984962" expanded="true" signature="9367:9443" ph="UPDATE custo... " />
+            <marker date="1494959984962" expanded="true" signature="9483:9559" ph="UPDATE custo... " />
+            <marker date="1494959984962" expanded="true" signature="9599:9675" ph="UPDATE custo... " />
+            <marker date="1494959984962" expanded="true" signature="9715:9795" ph="UPDATE custo... " />
+            <marker date="1494959984962" expanded="true" signature="10403:10432" ph="SELECT COUNT... customer" />
+            <marker date="1494959984962" expanded="true" signature="10527:10724" ph="INSERT INTO customer... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/banking_app/templates/banking_app/login_page.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="6" column="40" lean-forward="false" selection-start-line="6" selection-start-column="40" selection-end-line="6" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/banking_app/templates/banking_app/user_portal.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="12" column="28" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="33" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/banking_app/templates/banking_app/create_account.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="465">
+          <caret line="31" column="0" lean-forward="false" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/banking_app/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2970">
+          <caret line="200" column="13" lean-forward="false" selection-start-line="200" selection-start-column="13" selection-end-line="200" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/banking_app/templates/banking_app/create_user.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="6" column="43" lean-forward="false" selection-start-line="6" selection-start-column="43" selection-end-line="6" selection-end-column="43" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/BankingSystem/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="19" column="53" lean-forward="false" selection-start-line="19" selection-start-column="53" selection-end-line="19" selection-end-column="53" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/banking_app/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="10" column="63" lean-forward="false" selection-start-line="10" selection-start-column="63" selection-end-line="10" selection-end-column="63" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/banking_app/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#54#0" expanded="true" />
+            <marker date="1494959984962" expanded="true" signature="528:585" ph="SELECT * fro... users" />
+            <marker date="1494959984962" expanded="true" signature="1362:1405" ph="INSERT INTO customer... " />
+            <marker date="1494959984962" expanded="true" signature="1592:1646" ph="INSERT INTO users... " />
+            <marker date="1494959984962" expanded="true" signature="1793:1830" ph="INSERT INTO phonenumber... " />
+            <marker date="1494959984962" expanded="true" signature="1964:2001" ph="INSERT INTO phonenumber... " />
+            <marker date="1494959984962" expanded="true" signature="2109:2166" ph="SELECT * fro... users" />
+            <marker date="1494959984962" expanded="true" signature="2435:2468" ph="SELECT abbre... currency" />
+            <marker date="1494959984962" expanded="true" signature="2556:2581" ph="SELECT * FRO... accounttype" />
+            <marker date="1494959984962" expanded="true" signature="2663:2694" ph="SELECT * FRO... users" />
+            <marker date="1494959984962" expanded="true" signature="3108:3166" ph="INSERT INTO account... " />
+            <marker date="1494959984962" expanded="true" signature="3455:3486" ph="SELECT * FRO... users" />
+            <marker date="1494959984962" expanded="true" signature="3627:3668" ph="SELECT * FRO... account" />
+            <marker date="1494959984962" expanded="true" signature="4529:4560" ph="SELECT * fro... users" />
+            <marker date="1494959984962" expanded="true" signature="4933:4958" ph="SELECT * fro... accounttype" />
+            <marker date="1494959984962" expanded="true" signature="5516:5636" ph="UPDATE accou... " />
+            <marker date="1494959984962" expanded="true" signature="5659:5785" ph="UPDATE accou... " />
+            <marker date="1494959984962" expanded="true" signature="5808:5931" ph="UPDATE accou... " />
+            <marker date="1494959984962" expanded="true" signature="5983:6008" ph="SELECT * fro... accounttype" />
+            <marker date="1494959984962" expanded="true" signature="6277:6319" ph="SELECT * fro... customer" />
+            <marker date="1494959984962" expanded="true" signature="6770:6792" ph="SELECT * fro... customer" />
+            <marker date="1494959984962" expanded="true" signature="7009:7050" ph="SELECT * FRO... account" />
+            <marker date="1494959984962" expanded="true" signature="7291:7332" ph="SELECT * FRO... account" />
+            <marker date="1494959984962" expanded="true" signature="7450:7668" ph="SELECT * FRO... transaction" />
+            <marker date="1494959984962" expanded="true" signature="8088:8129" ph="SELECT * FRO... account" />
+            <marker date="1494959984962" expanded="true" signature="8468:8521" ph="UPDATE accou... " />
+            <marker date="1494959984962" expanded="true" signature="8614:8644" ph="INSERT into balance... " />
+            <marker date="1494959984962" expanded="true" signature="8614:8687" ph="INSERT INTO transaction... " />
+            <marker date="1494959984962" expanded="true" signature="9367:9443" ph="UPDATE custo... " />
+            <marker date="1494959984962" expanded="true" signature="9483:9559" ph="UPDATE custo... " />
+            <marker date="1494959984962" expanded="true" signature="9599:9675" ph="UPDATE custo... " />
+            <marker date="1494959984962" expanded="true" signature="9715:9795" ph="UPDATE custo... " />
+            <marker date="1494959984962" expanded="true" signature="10403:10432" ph="SELECT COUNT... customer" />
+            <marker date="1494959984962" expanded="true" signature="10527:10724" ph="INSERT INTO customer... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/banking_app/templates/banking_app/login_page.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="24" column="37" lean-forward="false" selection-start-line="24" selection-start-column="37" selection-end-line="24" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/banking_app/templates/banking_app/base.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="9" column="44" lean-forward="false" selection-start-line="9" selection-start-column="44" selection-end-line="9" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/banking_app/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/BankingSystem/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="19" column="53" lean-forward="false" selection-start-line="19" selection-start-column="53" selection-end-line="19" selection-end-column="53" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/banking_app/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="10" column="63" lean-forward="true" selection-start-line="10" selection-start-column="63" selection-end-line="10" selection-end-column="63" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/banking_app/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#54#0" expanded="true" />
+            <marker date="1494959984962" expanded="true" signature="528:585" ph="SELECT * fro... users" />
+            <marker date="1494959984962" expanded="true" signature="1362:1405" ph="INSERT INTO customer... " />
+            <marker date="1494959984962" expanded="true" signature="1592:1646" ph="INSERT INTO users... " />
+            <marker date="1494959984962" expanded="true" signature="1793:1830" ph="INSERT INTO phonenumber... " />
+            <marker date="1494959984962" expanded="true" signature="1964:2001" ph="INSERT INTO phonenumber... " />
+            <marker date="1494959984962" expanded="true" signature="2109:2166" ph="SELECT * fro... users" />
+            <marker date="1494959984962" expanded="true" signature="2435:2468" ph="SELECT abbre... currency" />
+            <marker date="1494959984962" expanded="true" signature="2556:2581" ph="SELECT * FRO... accounttype" />
+            <marker date="1494959984962" expanded="true" signature="2663:2694" ph="SELECT * FRO... users" />
+            <marker date="1494959984962" expanded="true" signature="3108:3166" ph="INSERT INTO account... " />
+            <marker date="1494959984962" expanded="true" signature="3455:3486" ph="SELECT * FRO... users" />
+            <marker date="1494959984962" expanded="true" signature="3627:3668" ph="SELECT * FRO... account" />
+            <marker date="1494959984962" expanded="true" signature="4529:4560" ph="SELECT * fro... users" />
+            <marker date="1494959984962" expanded="true" signature="4933:4958" ph="SELECT * fro... accounttype" />
+            <marker date="1494959984962" expanded="true" signature="5516:5636" ph="UPDATE accou... " />
+            <marker date="1494959984962" expanded="true" signature="5659:5785" ph="UPDATE accou... " />
+            <marker date="1494959984962" expanded="true" signature="5808:5931" ph="UPDATE accou... " />
+            <marker date="1494959984962" expanded="true" signature="5983:6008" ph="SELECT * fro... accounttype" />
+            <marker date="1494959984962" expanded="true" signature="6277:6319" ph="SELECT * fro... customer" />
+            <marker date="1494959984962" expanded="true" signature="6770:6792" ph="SELECT * fro... customer" />
+            <marker date="1494959984962" expanded="true" signature="7009:7050" ph="SELECT * FRO... account" />
+            <marker date="1494959984962" expanded="true" signature="7291:7332" ph="SELECT * FRO... account" />
+            <marker date="1494959984962" expanded="true" signature="7450:7668" ph="SELECT * FRO... transaction" />
+            <marker date="1494959984962" expanded="true" signature="8088:8129" ph="SELECT * FRO... account" />
+            <marker date="1494959984962" expanded="true" signature="8468:8521" ph="UPDATE accou... " />
+            <marker date="1494959984962" expanded="true" signature="8614:8644" ph="INSERT into balance... " />
+            <marker date="1494959984962" expanded="true" signature="8614:8687" ph="INSERT INTO transaction... " />
+            <marker date="1494959984962" expanded="true" signature="9367:9443" ph="UPDATE custo... " />
+            <marker date="1494959984962" expanded="true" signature="9483:9559" ph="UPDATE custo... " />
+            <marker date="1494959984962" expanded="true" signature="9599:9675" ph="UPDATE custo... " />
+            <marker date="1494959984962" expanded="true" signature="9715:9795" ph="UPDATE custo... " />
+            <marker date="1494959984962" expanded="true" signature="10403:10432" ph="SELECT COUNT... customer" />
+            <marker date="1494959984962" expanded="true" signature="10527:10724" ph="INSERT INTO customer... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/banking_app/templates/banking_app/login_page.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="24" column="37" lean-forward="false" selection-start-line="24" selection-start-column="37" selection-end-line="24" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/banking_app/templates/banking_app/base.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="9" column="44" lean-forward="false" selection-start-line="9" selection-start-column="44" selection-end-line="9" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/banking_app/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/BankingSystem/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/banking_app/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/banking_app/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#54#0" expanded="true" />
+            <marker date="1494959984962" expanded="true" signature="528:585" ph="SELECT * fro... users" />
+            <marker date="1494959984962" expanded="true" signature="1362:1405" ph="INSERT INTO customer... " />
+            <marker date="1494959984962" expanded="true" signature="1592:1646" ph="INSERT INTO users... " />
+            <marker date="1494959984962" expanded="true" signature="1793:1830" ph="INSERT INTO phonenumber... " />
+            <marker date="1494959984962" expanded="true" signature="1964:2001" ph="INSERT INTO phonenumber... " />
+            <marker date="1494959984962" expanded="true" signature="2109:2166" ph="SELECT * fro... users" />
+            <marker date="1494959984962" expanded="true" signature="2435:2468" ph="SELECT abbre... currency" />
+            <marker date="1494959984962" expanded="true" signature="2556:2581" ph="SELECT * FRO... accounttype" />
+            <marker date="1494959984962" expanded="true" signature="2663:2694" ph="SELECT * FRO... users" />
+            <marker date="1494959984962" expanded="true" signature="3108:3166" ph="INSERT INTO account... " />
+            <marker date="1494959984962" expanded="true" signature="3455:3486" ph="SELECT * FRO... users" />
+            <marker date="1494959984962" expanded="true" signature="3627:3668" ph="SELECT * FRO... account" />
+            <marker date="1494959984962" expanded="true" signature="4529:4560" ph="SELECT * fro... users" />
+            <marker date="1494959984962" expanded="true" signature="4933:4958" ph="SELECT * fro... accounttype" />
+            <marker date="1494959984962" expanded="true" signature="5516:5636" ph="UPDATE accou... " />
+            <marker date="1494959984962" expanded="true" signature="5659:5785" ph="UPDATE accou... " />
+            <marker date="1494959984962" expanded="true" signature="5808:5931" ph="UPDATE accou... " />
+            <marker date="1494959984962" expanded="true" signature="5983:6008" ph="SELECT * fro... accounttype" />
+            <marker date="1494959984962" expanded="true" signature="6277:6319" ph="SELECT * fro... customer" />
+            <marker date="1494959984962" expanded="true" signature="6770:6792" ph="SELECT * fro... customer" />
+            <marker date="1494959984962" expanded="true" signature="7009:7050" ph="SELECT * FRO... account" />
+            <marker date="1494959984962" expanded="true" signature="7291:7332" ph="SELECT * FRO... account" />
+            <marker date="1494959984962" expanded="true" signature="7450:7668" ph="SELECT * FRO... transaction" />
+            <marker date="1494959984962" expanded="true" signature="8088:8129" ph="SELECT * FRO... account" />
+            <marker date="1494959984962" expanded="true" signature="8468:8521" ph="UPDATE accou... " />
+            <marker date="1494959984962" expanded="true" signature="8614:8644" ph="INSERT into balance... " />
+            <marker date="1494959984962" expanded="true" signature="8614:8687" ph="INSERT INTO transaction... " />
+            <marker date="1494959984962" expanded="true" signature="9367:9443" ph="UPDATE custo... " />
+            <marker date="1494959984962" expanded="true" signature="9483:9559" ph="UPDATE custo... " />
+            <marker date="1494959984962" expanded="true" signature="9599:9675" ph="UPDATE custo... " />
+            <marker date="1494959984962" expanded="true" signature="9715:9795" ph="UPDATE custo... " />
+            <marker date="1494959984962" expanded="true" signature="10403:10432" ph="SELECT COUNT... customer" />
+            <marker date="1494959984962" expanded="true" signature="10527:10724" ph="INSERT INTO customer... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/banking_app/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/banking_app/tests.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/banking_app/apps.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/banking_app/admin.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="205">
+          <caret line="199" column="5" lean-forward="false" selection-start-line="199" selection-start-column="5" selection-end-line="199" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/.local/lib/python3.5/site-packages/django/db/backends/oracle/base.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-30">
+          <caret line="53" column="0" lean-forward="false" selection-start-line="53" selection-start-column="0" selection-end-line="53" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/banking_app/templates/banking_app/base.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="9" column="44" lean-forward="false" selection-start-line="9" selection-start-column="44" selection-end-line="9" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/banking_app/templates/CreateUser.html" />
+    <entry file="file://$PROJECT_DIR$/banking_app/templates/banking_app/adminPortal.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-5">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/BankingSystem/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="19" column="53" lean-forward="false" selection-start-line="19" selection-start-column="53" selection-end-line="19" selection-end-column="53" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/banking_app/templates/banking_app/create_user.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="6" column="43" lean-forward="false" selection-start-line="6" selection-start-column="43" selection-end-line="6" selection-end-column="43" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/schema.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/banking_app/templates/banking_app/login_page.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="6" column="40" lean-forward="false" selection-start-line="6" selection-start-column="40" selection-end-line="6" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/banking_app/templates/banking_app/create_account.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="465">
+          <caret line="31" column="0" lean-forward="false" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/banking_app/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2970">
+          <caret line="200" column="13" lean-forward="false" selection-start-line="200" selection-start-column="13" selection-end-line="200" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/banking_app/templates/banking_app/manage_account_type.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="19" column="9" lean-forward="false" selection-start-line="19" selection-start-column="9" selection-end-line="19" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/banking_app/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="1" column="0" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/banking_app/templates/banking_app/user_portal.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="256">
+          <caret line="32" column="7" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="32" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/banking_app/templates/banking_app/deposit.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-224">
+          <caret line="12" column="0" lean-forward="false" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/banking_app/templates/banking_app/summary.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="211">
+          <caret line="57" column="12" lean-forward="true" selection-start-line="57" selection-start-column="12" selection-end-line="57" selection-end-column="12" />
+          <folding>
+            <marker date="1494959687506" expanded="false" signature="877:887" ph="..." />
+            <marker date="1494959687506" expanded="false" signature="1250:1260" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/banking_app/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="136" column="21" lean-forward="true" selection-start-line="136" selection-start-column="21" selection-end-line="136" selection-end-column="21" />
+          <folding>
+            <element signature="e#0#54#0" expanded="true" />
+            <marker date="1494959984962" expanded="true" signature="528:585" ph="SELECT * fro... users" />
+            <marker date="1494959984962" expanded="true" signature="1362:1405" ph="INSERT INTO customer... " />
+            <marker date="1494959984962" expanded="true" signature="1592:1646" ph="INSERT INTO users... " />
+            <marker date="1494959984962" expanded="true" signature="1793:1830" ph="INSERT INTO phonenumber... " />
+            <marker date="1494959984962" expanded="true" signature="1964:2001" ph="INSERT INTO phonenumber... " />
+            <marker date="1494959984962" expanded="true" signature="2109:2166" ph="SELECT * fro... users" />
+            <marker date="1494959984962" expanded="true" signature="2435:2468" ph="SELECT abbre... currency" />
+            <marker date="1494959984962" expanded="true" signature="2556:2581" ph="SELECT * FRO... accounttype" />
+            <marker date="1494959984962" expanded="true" signature="2663:2694" ph="SELECT * FRO... users" />
+            <marker date="1494959984962" expanded="true" signature="3108:3166" ph="INSERT INTO account... " />
+            <marker date="1494959984962" expanded="true" signature="3455:3486" ph="SELECT * FRO... users" />
+            <marker date="1494959984962" expanded="true" signature="3627:3668" ph="SELECT * FRO... account" />
+            <marker date="1494959984962" expanded="true" signature="4529:4560" ph="SELECT * fro... users" />
+            <marker date="1494959984962" expanded="true" signature="4933:4958" ph="SELECT * fro... accounttype" />
+            <marker date="1494959984962" expanded="true" signature="5516:5636" ph="UPDATE accou... " />
+            <marker date="1494959984962" expanded="true" signature="5659:5785" ph="UPDATE accou... " />
+            <marker date="1494959984962" expanded="true" signature="5808:5931" ph="UPDATE accou... " />
+            <marker date="1494959984962" expanded="true" signature="5983:6008" ph="SELECT * fro... accounttype" />
+            <marker date="1494959984962" expanded="true" signature="6277:6319" ph="SELECT * fro... customer" />
+            <marker date="1494959984962" expanded="true" signature="6770:6792" ph="SELECT * fro... customer" />
+            <marker date="1494959984962" expanded="true" signature="7009:7050" ph="SELECT * FRO... account" />
+            <marker date="1494959984962" expanded="true" signature="7291:7332" ph="SELECT * FRO... account" />
+            <marker date="1494959984962" expanded="true" signature="7450:7668" ph="SELECT * FRO... transaction" />
+            <marker date="1494959984962" expanded="true" signature="8088:8129" ph="SELECT * FRO... account" />
+            <marker date="1494959984962" expanded="true" signature="8468:8521" ph="UPDATE accou... " />
+            <marker date="1494959984962" expanded="true" signature="8614:8644" ph="INSERT into balance... " />
+            <marker date="1494959984962" expanded="true" signature="8614:8687" ph="INSERT INTO transaction... " />
+            <marker date="1494959984962" expanded="true" signature="9367:9443" ph="UPDATE custo... " />
+            <marker date="1494959984962" expanded="true" signature="9483:9559" ph="UPDATE custo... " />
+            <marker date="1494959984962" expanded="true" signature="9599:9675" ph="UPDATE custo... " />
+            <marker date="1494959984962" expanded="true" signature="9715:9795" ph="UPDATE custo... " />
+            <marker date="1494959984962" expanded="true" signature="10403:10432" ph="SELECT COUNT... customer" />
+            <marker date="1494959984962" expanded="true" signature="10527:10724" ph="INSERT INTO customer... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>

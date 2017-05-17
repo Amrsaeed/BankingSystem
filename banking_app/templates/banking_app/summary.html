@@ -1,0 +1,67 @@
+<h1>Account summary </h1>
+
+
+
+{% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
+<style>
+    table#t01 ,tr#t01 , td#t01{
+        border : none;
+    }
+</style>
+<form action="{% url 'banking_system:summary' %}" method="post">
+    {% csrf_token %}
+
+        <table id="t01">
+            <tr id="t01">
+                <td id="t01"><label for="start">Starting:</label></td>
+                <td id="t01"><input id="start" name="start"
+                           type="date" class="form-control"></td>
+                <td id="t01"><label for="end">Ending:</label></td>
+                <td id="t01"><input id="end" name="end"
+                           type="date" class="form-control"></td>
+            </tr>
+
+        </table>
+<input type="submit" value="Get Summary" />
+</form>
+<style>
+table, th, td {
+    border: 1px solid black;
+}
+</style>
+
+
+
+<table style="width:100%">
+    <tr>
+       <th>Account Number</th>
+        <th>Account Type</th>
+        <th>Balance</th>
+        <th>Currency</th>
+    </tr>
+    <tr>
+       <td>{{ acc.accountnum }}</td>
+        <td>{{ acc.accounttype.name }}</td>
+        <td>{{ acc.balance }}</td>
+        <td>{{ acc.currency.abbreviation }}</td>
+    </tr>
+</table>
+<h1>Transactions</h1>
+<table style="width:100%">
+   <tr>
+       <th>transaction number</th>
+       <th>transaction type</th>
+       <th>transaction date</th>
+       <th>transaction amount</th>
+   </tr>
+    {% for row in trans %}
+        <tr>
+           <td>{{ row.transnum }}</td>
+           <td>{{ row.type }}</td>
+           <td>{{ row.transdate }}</td>
+            <td>{{ row.amount }}</td>
+        </tr>
+    {% endfor %}
+</table>
+
+<a href={% url 'banking_system:user_portal' %}>Back to Portal</a>

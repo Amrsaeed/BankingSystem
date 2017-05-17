@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<style>
+table, td{
+    border: 1px solid black;
+}
+</style>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+
+<h1>Managing Customers </h1>
+
+{% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
+
+<form action="{% url 'banking_system:manageCustomers' %}" method="post">
+{% csrf_token %}
+<table width="70%">
+	<tr>
+		<th width="10%">Customer ID</th>
+		<th width="20%">First Name</th>
+		<th width="20%">Last Name</th>
+		<th width="20%">Email</th>
+		<th width="30%">Address</th>
+	</tr>
+	{% for customer in Customers %}
+	<tr>
+	<td>{{ customer.customerid }} <input type="hidden" name="customer_id", value="{{ customer.customerid }}"></td>
+	<td> {{ customer.fname }} <input type="hidden" name="customer_fname", value="{{ customer.fname }}"> </td>
+	<td> {{ customer.lname }} <input type="hidden" name="customer_lname", value="{{ customer.lname }}"> </td>
+	<td> {{ customer.email }}  <input type="hidden" name="customer_email", value="{{ customer.email }}"></td>
+	<td> {{ customer.address }} <input type="hidden" name="customer_address", value="{{ customer.address }}"> </td>
+	<td> <input name = "edit" id="edit" type="Submit" value="Edit"/> </td>
+	</tr>
+    {% endfor %}
+</table>
+<input id="Add" name = 'add' type="Submit" value="Add Customer"/>
+<input id="Return" type="button" value="Back" onclick="location.href='/banking_app/adminPortal';" />
+</form>
+</body>
+</html>
+
+

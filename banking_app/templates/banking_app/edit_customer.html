@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+
+<h1>Editing a Customer </h1>
+
+{% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
+
+<form action="{% url 'banking_system:editCustomer' %}" method="post">
+{% csrf_token %}
+<table width="70%">
+	<tr>
+		<th width="10%">Customer ID</th>
+		<th width="20%">First Name</th>
+		<th width="20%">Last Name</th>
+		<th width="20%">Email</th>
+		<th width="30%">Address</th>
+	</tr>
+	<tr>
+	<td>{{ CustomerID }}<input type="hidden" name="customer_id", value="{{ CustomerID }}"></td>
+	<td><input type="text" name="customer_fname", value="{{ Fname }}"> </td>
+	<td><input type="text" name="customer_lname", value="{{ Lname }}"> </td>
+	<td><input type="text" name="customer_email", value="{{ Email }}"></td>
+	<td><input type="text" name="customer_address", value="{{ Address }}"> </td>
+	<td> <input type="Submit" value="Make Changes"/> </td>
+	</tr>
+</table>
+<input id="Return" type="button" value="Back" onclick="location.href='/banking_app/adminPortal/manageCustomers';" />
+</form>
+</body>
+</html>

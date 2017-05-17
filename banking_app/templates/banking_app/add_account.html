@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+
+<h1>Editing a Customer </h1>
+
+{% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
+
+<form action="{% url 'banking_system:addAccount' %}" method="post">
+{% csrf_token %}
+<table width="70%">
+	<tr>
+		<th width="10%">Account Number</th>
+		<th width="20%">Account Type</th>
+		<th width="20%">Currency</th>
+		<th width="20%">Customer ID</th>
+		<th width="30%">Balance</th>
+	</tr>
+	<tr>
+	<td>{{ AccountNum }}<input type="hidden" name="account_num", value="{{ AccountNum }}"></td>
+	<td><input type="text" name="account_type""> </td>
+	<td><input type="text" name="account_currency""> </td>
+	<td><input type="text" name="account_customerid""></td>
+	<td><input type="text" name="account_balance""> </td>
+	<td> <input type="Submit" value="Add Account"/> </td>
+	</tr>
+</table>
+<input id="Return" type="button" value="Back" onclick="location.href='/banking_app/adminPortal/manageAccounts';" />
+</form>
+</body>
+</html>

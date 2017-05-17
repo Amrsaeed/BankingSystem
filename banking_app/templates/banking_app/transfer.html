@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+
+<h1>Transferring Money </h1>
+
+{% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
+<style>
+table, th, td {
+    border: 1px solid black;
+}
+table#t01 ,tr#t01 , td#t01{
+        border : none;
+}
+
+</style>
+<form action="{% url 'banking_system:transfer' %}" method="post">
+{% csrf_token %}
+<table id="t01" width="70%">
+	<tr>
+		<th width="10%">Account Number</th>
+		<th width="20%">Account Type</th>
+		<th width="10%">Currency</th>
+		<th width="20%">Current Balance</th>
+		<th width="30%">Transfer Amount</th>
+		<th width="10%"> Recieving Account Number </th>
+	</tr>
+	<tr>
+	<td align="center">{{ Accountnum }}</td>
+	<td align="center">{{ AccountType }}</td>
+	<td align="center">{{ AccountCurrency }}</td>
+	<td align="center">{{ AccountBalance }}</td>
+	<td><input type="text" name="transfer_amount"> </td>
+	<td><input type="text" name="recieving_accountnum"> </td>
+	<td> <input type="Submit" value="Transfer"/> </td>
+	</tr>
+</table>
+<input id="Return" type="button" value="Back" onclick="location.href='/banking_app/user_portal';" />
+</form>
+</body>
+</html>

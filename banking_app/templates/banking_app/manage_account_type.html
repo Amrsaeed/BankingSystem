@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+
+<h1>Managing Account Types </h1>
+
+{% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
+
+<form action="{% url 'banking_system:manageAccountTypes' %}" method="post">
+{% csrf_token %}
+<table style='border:1px solid black'>
+	<tr>
+	    <th>Account Type</th>
+		<th>Interest Rate</th>
+		<th>Ceiling Amount</th>
+	</tr>
+	{% for type in AccountTypes %}
+	<tr>
+        <th> {{ type.name }} </th>
+        <td><input id="id_interestrate" name="{{type.name}}_interest" 
+		type ="text" class = "form-control" value={{type.interest}}></td>
+		<td><input id="id_ceiling" name="{{type.name}}_ceiling" 
+		type ="text" class = "form-control" value={{type.ceiling}}></td>
+	</tr>
+    {% endfor %}
+   	<tr>
+   			<td>
+   				<input type="submit" value="Make Changes" />
+   			</td>
+			<td>
+				<input id="Return" type="button" 
+				value="Back" onclick="location.href='/banking_app/adminPortal';" />
+			</td>
+		
+	</tr>
+</table>
+</form>
+</body>
+</html>
+
+
