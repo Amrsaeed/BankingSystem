@@ -136,6 +136,6 @@ INSERT INTO currency (abbreviation) VALUES ('USD');
 INSERT INTO currency (abbreviation) VALUES ('EUR');
 INSERT INTO customer values(1234,'ewais','ahmed','a.ewais@aucegypt.edu','egypt');
 INSERT INTO customer values(12345,'saeed','amr','amr@aucegypt.edu','egypt');
-insert into users values(users_seq.nextval,'3wais','password',1,1);
-insert into users values(users_seq.nextval,'amr','password',0,2);
+insert into users values(users_seq.nextval,'3wais','password',1,1234);
+insert into users values(users_seq.nextval,'amr','password',0,12345);
 
