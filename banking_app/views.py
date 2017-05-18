@@ -31,17 +31,24 @@ def login(request):
 def create_user(request):
     if not request.POST:
         return render(request, template_name='banking_app/create_user.html')
-    with connection.cursor() as cursor:
-        cursor.execute("INSERT INTO customer VALUES(%s,%s,%s,%s,%s)",
+
+    customer = Customer.objects.raw("SELECT * from customer WHERE customerid = " + str(request.POST['id']))
+    if list(customer):
+        return render(request, template_name='banking_app/create_user.html', context={
+            'error_message': "Customer ID Exists!",
+        })
+    else:
+        with connection.cursor() as cursor:
+            cursor.execute("INSERT INTO customer VALUES(%s,%s,%s,%s,%s)",
                        [request.POST['id'],request.POST['lname'],request.POST['fname'],
                         request.POST['email'],request.POST['address']])
-        cursor.execute("INSERT INTO users VALUES(users_seq.nextval,%s,%s,0,%s)",
+            cursor.execute("INSERT INTO users VALUES(users_seq.nextval,%s,%s,0,%s)",
                        [request.POST['username'],request.POST['password'],
                         request.POST['id']])
-        cursor.execute("INSERT INTO phonenumber VALUES(%s,%s)",
-                       [request.POST['id'], request.POST['phone']])
-        if request.POST['phone1']:
             cursor.execute("INSERT INTO phonenumber VALUES(%s,%s)",
+                       [request.POST['id'], request.POST['phone']])
+            if request.POST['phone1']:
+                cursor.execute("INSERT INTO phonenumber VALUES(%s,%s)",
                            [request.POST['id'], request.POST['phone1']])
 
 
@@ -213,11 +220,11 @@ def deposit(request):
 def transfer(request):
     accountnum = request.session['account_num']
     transferAmount = request.POST.get('transfer_amount', -1)
-    recievingAccountnum = request.POST.get('recieving_accountnum', 2)
+    recievingAccountnum = request.POST.get('recieving_accountnum', -652)
     account = Account.objects.raw("SELECT * from account WHERE accountnum = " + str(accountnum))
     recieveingAccount = Account.objects.raw("SELECT * from account WHERE accountnum = " + str(recievingAccountnum))
     
-    if not list(recieveingAccount) or accountnum == recievingAccountnum :
+    if not list(recieveingAccount) or not recievingAccountnum == -652 or accountnum == recievingAccountnum :
         account = Account.objects.raw("SELECT * from account WHERE accountnum = " + str(accountnum))
         context = {'error_message': 'Invalid Reciever', 'Accountnum': account[0].accountnum, 'AccountType': account[0].accounttype.name, 'AccountBalance': account[0].balance, 'AccountCurrency': account[0].currency.abbreviation,}
         return render(request, 'banking_app/transfer.html', context)
@@ -253,15 +260,32 @@ def editCustomer(request):
     return render(request, 'banking_app/edit_customer.html', context)
 	
 def addCustomer(request):
-    customerID = request.POST.get('customer_id', 0)
-    customerFname = request.POST.get('customer_fname', '')
-    customerLname = request.POST.get('customer_lname', '')
-    customerEmail = request.POST.get('customer_email', '')
-    customerAddress = request.POST.get('customer_address', '')
-    with connection.cursor() as c:
-        c.execute("INSERT INTO customer (customerid, fname, lname, email, address) VALUES (customer_seq.nextval,'" + customerFname + "', '" + customerLname + "', '" + customerEmail + "', '" + customerAddress + "')")
-    context = {'CustomerID': customerID, 'Fname': customerFname, 'Lname': customerLname, 'Address': customerAddress, 'Email': customerEmail,}
-    return render(request, 'banking_app/add_customer.html', context)
+    if not request.POST:
+        return render(request, template_name='banking_app/add_customer.html')
+    
+    customer = Customer.objects.raw("SELECT * from customer WHERE customerid = " + str(request.POST['id']))
+    if list(customer):
+        return render(request, template_name='banking_app/add_customer.html', context={
+            'error_message': "Customer ID Exists!",
+        })
+    else:
+        with connection.cursor() as cursor:
+            cursor.execute("INSERT INTO customer VALUES(%s,%s,%s,%s,%s)",
+                       [request.POST['id'],request.POST['lname'],request.POST['fname'],
+                        request.POST['email'],request.POST['address']])
+            cursor.execute("INSERT INTO users VALUES(users_seq.nextval,%s,%s,0,%s)",
+                       [request.POST['username'],request.POST['password'],
+                        request.POST['id']])
+            cursor.execute("INSERT INTO phonenumber VALUES(%s,%s)",
+                       [request.POST['id'], request.POST['phone']])
+            if request.POST['phone1']:
+                cursor.execute("INSERT INTO phonenumber VALUES(%s,%s)",
+                           [request.POST['id'], request.POST['phone1']])
+
+    user = Users.objects.raw("SELECT * from users where username = %s AND password = %s",
+                             [request.POST['username'], request.POST['password']])
+    request.session['user_id'] = user[0].id
+    return HttpResponseRedirect(reverse('banking_system:manageCustomers'))
     
 def editAccount(request):
     accountNum = request.POST.get('account_num', 0)
@@ -294,7 +318,6 @@ def addAccount(request):
     accountTypes = Accounttype.objects.raw("SELECT * from accounttype")
     
     customer = Customer.objects.raw("SELECT * from customer WHERE customerid = " + str(accountCustomerid))
-    print("THIS IS SPARTA: ", customer, " ALSO ", accountCustomerid)
     if not list(customer):
         return render(request, template_name='banking_app/add_account.html', context={
             'error_message': "No such customer ID", 'Currencies': currencies, 'Types': accountTypes,
