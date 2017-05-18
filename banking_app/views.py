@@ -105,13 +105,19 @@ def adminPortal(request):
     return render(request, 'banking_app/adminPortal.html')
 
 def manageAccounts(request):
-    if request.POST.get('edit') == 'Edit':
-       account = Account.objects.raw("SELECT * from account WHERE accountnum = " + request.POST.get('account_num', -1))
-       context = {'AccountNum': account[0].accountnum, 'AccountType': account[0].accounttype, 'Currency': account[0].currency, 'CustomerID': account[0].customerid, 'Balance': account[0].balance,}
+    if str(request.POST.get('edit'))[:4] == 'Edit':
+       accountNum = str(request.POST.get('edit'))[5:]
+       account = Account.objects.raw("SELECT * from account WHERE accountnum = " + accountNum)
+       currencies = Currency.objects.raw("SELECT * from currency")
+       accountTypes = Accounttype.objects.raw("SELECT * from accounttype")
+       context = {'AccountNum': account[0].accountnum, 'AccountType': account[0].accounttype, 'Currency': account[0].currency, 'CustomerID': account[0].customerid.customerid, 'Balance': account[0].balance, 'Currencies': currencies, 'Types': accountTypes,}
        return render(request, 'banking_app/edit_account.html', context)
     
     if request.POST.get('add') == 'Add Account':
-       return render(request, 'banking_app/add_account.html')
+       currencies = Currency.objects.raw("SELECT * from currency")
+       accountTypes = Accounttype.objects.raw("SELECT * from accounttype")
+       context = {'Currencies': currencies, 'Types': accountTypes,}
+       return render(request, 'banking_app/add_account.html', context)
        
     accounts = Account.objects.raw("SELECT * from account")
     context = {'Accounts': accounts,}
@@ -126,6 +132,11 @@ def manageAccountTypes(request):
     current_ceiling = request.POST.get('Current_ceiling', AccountTypes[1].ceiling)
     saving_ceiling = request.POST.get('Saving_ceiling', AccountTypes[2].ceiling)
     
+    if int(debit_interest) > 100 or int(current_interest) > 100 or int(saving_interest) > 100 or int(debit_interest) < 0 or int(current_interest) < 0 or int(saving_interest) < 0:
+        AccountTypes = Accounttype.objects.raw("SELECT * from accounttype")
+        context = {'error_message': 'Invalid Interest Rate', 'AccountTypes' : AccountTypes,}
+        return render(request, 'banking_app/manage_account_type.html', context)
+
     with connection.cursor() as c:
          c.execute("UPDATE accounttype SET ceiling = " + str(debit_ceiling) + ", interest = " + str(debit_interest) + " WHERE name = 'Debit'")
          c.execute("UPDATE accounttype SET ceiling = " + str(current_ceiling) + ", interest = " + str(current_interest) + " WHERE name = 'Current'")
@@ -136,8 +147,9 @@ def manageAccountTypes(request):
     return render(request, 'banking_app/manage_account_type.html', context)
 
 def manageCustomers(request):
-    if request.POST.get('edit') == 'Edit':
-       customer = Customer.objects.raw("SELECT * from customer WHERE customerid = " + request.POST.get('customer_id', -1))
+    if str(request.POST.get('edit'))[:4] == 'Edit':
+       customerID = str(request.POST.get('edit'))[5:]
+       customer = Customer.objects.raw("SELECT * from customer WHERE customerid = " + customerID)
        context = {'CustomerID': customer[0].customerid, 'Fname': customer[0].fname, 'Lname': customer[0].lname, 'Address': customer[0].address, 'Email': customer[0].email,}
        return render(request, 'banking_app/edit_customer.html', context)
     
@@ -178,10 +190,9 @@ def withdraw(request):
            new_balance = account[0].balance - int(withdrawAmount)
            c.execute("UPDATE account SET balance = " + str(new_balance) + " WHERE accountnum = " + str(accountnum))
            c.execute("INSERT INTO transaction (transNum, type, transDate, amount, accountnum) VALUES (tran_seq.nextval, 'W', SYSDATE, " + str(withdrawAmount) + ", " + str(accountnum) + ")")
- 
+
     account = Account.objects.raw("SELECT * from account WHERE accountnum = " + str(accountnum))
     context = {'Accountnum': account[0].accountnum, 'AccountType': account[0].accounttype.name, 'AccountBalance': account[0].balance, 'AccountCurrency': account[0].currency.abbreviation,}
-    print(account[0].accountnum, account[0].accounttype.name, account[0].currency.abbreviation, account[0].balance)
     return render(request, 'banking_app/withdraw.html', context)
 
 def deposit(request):
@@ -206,6 +217,11 @@ def transfer(request):
     account = Account.objects.raw("SELECT * from account WHERE accountnum = " + str(accountnum))
     recieveingAccount = Account.objects.raw("SELECT * from account WHERE accountnum = " + str(recievingAccountnum))
     
+    if not list(recieveingAccount) or accountnum == recievingAccountnum :
+        account = Account.objects.raw("SELECT * from account WHERE accountnum = " + str(accountnum))
+        context = {'error_message': 'Invalid Reciever', 'Accountnum': account[0].accountnum, 'AccountType': account[0].accounttype.name, 'AccountBalance': account[0].balance, 'AccountCurrency': account[0].currency.abbreviation,}
+        return render(request, 'banking_app/transfer.html', context)
+
     if account[0].balance > int(transferAmount) and int(transferAmount) > 0:
        with connection.cursor() as c:
            new_balance = account[0].balance - int(transferAmount)
@@ -217,7 +233,7 @@ def transfer(request):
  
     account = Account.objects.raw("SELECT * from account WHERE accountnum = " + str(accountnum))
     context = {'Accountnum': account[0].accountnum, 'AccountType': account[0].accounttype.name, 'AccountBalance': account[0].balance, 'AccountCurrency': account[0].currency.abbreviation,}
-    print(account[0].accountnum, account[0].accounttype.name, account[0].currency.abbreviation, account[0].balance)
+
     return render(request, 'banking_app/transfer.html', context)
     
 def editCustomer(request):
@@ -226,7 +242,7 @@ def editCustomer(request):
     customerLname = request.POST.get('customer_lname', 0)
     customerEmail = request.POST.get('customer_email', 0)
     customerAddress = request.POST.get('customer_address', 0)
-    print(customerID, customerFname, customerLname, customerEmail, customerAddress)
+
     with connection.cursor() as c:
         c.execute("UPDATE customer SET fname = '" + str(customerFname) + "' WHERE customerid = " + str(customerID))
         c.execute("UPDATE customer SET lname = '" + str(customerLname) + "' WHERE customerid = " + str(customerID))
@@ -243,10 +259,7 @@ def addCustomer(request):
     customerEmail = request.POST.get('customer_email', '')
     customerAddress = request.POST.get('customer_address', '')
     with connection.cursor() as c:
-        c.execute("SELECT COUNT(*) from customer")
-        customerid = c.fetchone()
-        customerid = customerid[0] + 1
-        c.execute("INSERT INTO customer (customerid, fname, lname, email, address) VALUES (" + str(customerid) + ",'" + customerFname + "', '" + customerLname + "', '" + customerEmail + "', '" + customerAddress + "')")
+        c.execute("INSERT INTO customer (customerid, fname, lname, email, address) VALUES (customer_seq.nextval,'" + customerFname + "', '" + customerLname + "', '" + customerEmail + "', '" + customerAddress + "')")
     context = {'CustomerID': customerID, 'Fname': customerFname, 'Lname': customerLname, 'Address': customerAddress, 'Email': customerEmail,}
     return render(request, 'banking_app/add_customer.html', context)
     
@@ -256,14 +269,17 @@ def editAccount(request):
     accountCurrency = request.POST.get('account_currency', 0)
     accountCustomerid = request.POST.get('account_customerid', 0)
     accountBalance = request.POST.get('account_balance', 0)
-    print(accountNum, accountType, accountCurrency, accountCustomerid, accountBalance)
+
     with connection.cursor() as c:
         c.execute("UPDATE account SET accounttype = '" + str(accountType) + "' WHERE accountnum = " + str(accountNum))
         c.execute("UPDATE account SET currency = '" + str(accountCurrency) + "' WHERE accountnum = " + str(accountNum))
         c.execute("UPDATE account SET customerid = " + str(accountCustomerid) + " WHERE accountnum = " + str(accountNum))
         c.execute("UPDATE account SET balance = " + str(accountBalance) + " WHERE accountnum = " + str(accountNum))
 
-    context = {'AccountNum': accountNum, 'AccountType': accountType, 'Currency': accountCurrency, 'CustomerID': accountCustomerid, 'Balance': accountBalance,}
+    currencies = Currency.objects.raw("SELECT * from currency")
+    accountTypes = Accounttype.objects.raw("SELECT * from accounttype")
+
+    context = {'AccountNum': accountNum, 'AccountType': accountType, 'Currency': accountCurrency, 'CustomerID': accountCustomerid, 'Balance': accountBalance, 'Currencies': currencies, 'Types': accountTypes,}
     return render(request, 'banking_app/edit_account.html', context)
     
 def addAccount(request):
@@ -273,11 +289,20 @@ def addAccount(request):
     accountCurrency = request.POST.get('account_currency', 'EGP')
     accountCustomerid = request.POST.get('account_customerid', -1)
     accountBalance = request.POST.get('account_balance', 0)
-    print(accountNum, accountType, accountCurrency, accountBalance, accountCustomerid)
-    with connection.cursor() as c:
-        c.execute("SELECT COUNT(*) from account")
-        accountnum = c.fetchone()
-        accountnum = accountnum[0] + 1
-        c.execute("INSERT INTO account (accountnum, accounttype, currency, customerid, balance) VALUES ( account_seq.nextval,'" + str(accountType) + "', '" + str(accountCurrency) + "', '" + str(accountCustomerid) + "', " + str(accountBalance) + ")")
-    context = {'AccountNum': accountNum, 'AccountType': accountType, 'Currency': accountCurrency, 'CustomerID': accountCustomerid, 'Balance': accountBalance,}
+
+    currencies = Currency.objects.raw("SELECT * from currency")
+    accountTypes = Accounttype.objects.raw("SELECT * from accounttype")
+    
+    customer = Customer.objects.raw("SELECT * from customer WHERE customerid = " + str(accountCustomerid))
+    print("THIS IS SPARTA: ", customer, " ALSO ", accountCustomerid)
+    if not list(customer):
+        return render(request, template_name='banking_app/add_account.html', context={
+            'error_message': "No such customer ID", 'Currencies': currencies, 'Types': accountTypes,
+        })
+    else:
+        with connection.cursor() as c:
+            c.execute("INSERT INTO account (accountnum, accounttype, currency, customerid, balance) VALUES ( account_seq.nextval,'" + str(accountType) + "', '" + str(accountCurrency) + "', '" + str(accountCustomerid) + "', " + str(accountBalance) + ")")
+
+
+    context = {'Currencies': currencies, 'Types': accountTypes,}
     return render(request, 'banking_app/add_account.html', context)

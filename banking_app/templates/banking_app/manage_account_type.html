@@ -22,9 +22,9 @@
 	<tr>
         <th> {{ type.name }} </th>
         <td><input id="id_interestrate" name="{{type.name}}_interest" 
-		type ="text" class = "form-control" value={{type.interest}}></td>
+		type ="number" class = "form-control" value={{type.interest}}></td>
 		<td><input id="id_ceiling" name="{{type.name}}_ceiling" 
-		type ="text" class = "form-control" value={{type.ceiling}}></td>
+		type ="number" class = "form-control" value={{type.ceiling}}></td>
 	</tr>
     {% endfor %}
    	<tr>

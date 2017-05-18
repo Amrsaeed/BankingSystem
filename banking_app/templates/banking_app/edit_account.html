@@ -22,10 +22,18 @@
 	</tr>
 	<tr>
 	<td>{{ AccountNum }}<input type="hidden" name="account_num", value="{{ AccountNum }}"></td>
-	<td><input type="text" name="account_type", value="{{ AccountType.name }}"> </td>
-	<td><input type="text" name="account_currency", value="{{ Currency.abbreviation }}"> </td>
-	<td><input type="text" name="account_customerid", value="{{ CustomerID.customerid }}"></td>
-	<td><input type="text" name="account_balance", value="{{ Balance }}"> </td>
+	<td><select style="width:250px;" name='account_type'>
+			{% for type in Types %}
+				<option {% if type.name == AccountType %} selected ="selected" {% endif %} name = {{type.name}}">{{ type.name }} </option>
+			{% endfor %}
+		</select></td>
+	<td><select style="width:250px;" name='account_currency'>
+			{% for currency in Currencies %}     
+			<option {% if currency.abbreviation == Currency %} selected ="selected" {% endif %} name="{{ currency.abbreviation }}">{{ currency.abbreviation }}</option>
+			{% endfor %}
+		</select></td>
+	<td><input type="number" maxlength="10" name="account_customerid", value="{{ CustomerID }}"></td>
+	<td><input type="number" name="account_balance", value="{{ Balance }}"> </td>
 	<td> <input type="Submit" value="Make Changes"/> </td>
 	</tr>
 </table>

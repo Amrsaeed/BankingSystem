@@ -15,12 +15,13 @@ drop table customer;
 drop sequence account_seq;
 drop SEQUENCE users_seq;
 drop sequence tran_seq;
+drop sequence customer_seq;
 CREATE TABLE customer
 (
 	customerID number(10) CONSTRAINT customer_customerId_pk PRIMARY KEY,
 	lName varchar2(10) CONSTRAINT customer_lName_nn NOT NULL, 
 	fName varchar2(10) CONSTRAINT customer_fName_nn NOT NULL,
-	email varchar2(20) ,
+	email varchar2(30) ,
 	address varchar2(50)
 );
 
@@ -116,6 +117,17 @@ BEGIN
 END;
 /
 
+CREATE SEQUENCE customer_seq START WITH 1;
+
+CREATE OR REPLACE TRIGGER customer
+BEFORE INSERT ON customer
+FOR EACH ROW
+BEGIN
+	SELECT 	customer_seq.NEXTVAL
+	INTO	:new.customerid
+	FROM 	dual;
+END;
+/
 INSERT INTO accountType (name, ceiling, interest) VALUES ('Debit', 5000, 12);
 INSERT INTO accountType (name, ceiling, interest) VALUES ('Current', 5000, 12);
 INSERT INTO accountType (name, ceiling, interest) VALUES ('Saving', 5000, 12);
@@ -124,6 +136,6 @@ INSERT INTO currency (abbreviation) VALUES ('USD');
 INSERT INTO currency (abbreviation) VALUES ('EUR');
 INSERT INTO customer values(1234,'ewais','ahmed','a.ewais@aucegypt.edu','egypt');
 INSERT INTO customer values(12345,'saeed','amr','amr@aucegypt.edu','egypt');
-insert into users values(users_seq.nextval,'3wais','password',1,1234);
-insert into users values(users_seq.nextval,'amr','password',0,12345);
+insert into users values(users_seq.nextval,'3wais','password',1,1);
+insert into users values(users_seq.nextval,'amr','password',0,2);
 

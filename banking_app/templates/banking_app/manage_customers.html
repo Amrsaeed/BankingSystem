@@ -32,7 +32,7 @@ table, td{
 	<td> {{ customer.lname }} <input type="hidden" name="customer_lname", value="{{ customer.lname }}"> </td>
 	<td> {{ customer.email }}  <input type="hidden" name="customer_email", value="{{ customer.email }}"></td>
 	<td> {{ customer.address }} <input type="hidden" name="customer_address", value="{{ customer.address }}"> </td>
-	<td> <input name = "edit" id="edit" type="Submit" value="Edit"/> </td>
+	<td> <input name = "edit" id="edit" type="Submit" value="Edit_{{customer.customerid}}"/> </td>
 	</tr>
     {% endfor %}
 </table>

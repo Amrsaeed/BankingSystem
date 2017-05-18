@@ -22,10 +22,18 @@
 	</tr>
 	<tr>
 	<td>{{ AccountNum }}<input type="hidden" name="account_num", value="{{ AccountNum }}"></td>
-	<td><input type="text" name="account_type""> </td>
-	<td><input type="text" name="account_currency""> </td>
-	<td><input type="text" name="account_customerid""></td>
-	<td><input type="text" name="account_balance""> </td>
+	<td><select style="width:250px;" name='account_type'>
+			{% for type in Types %}
+				<option name = {{type.name}}">{{ type.name }} </option>
+			{% endfor %}
+		</select></td>
+	<td><select style="width:250px;" name='account_currency'>
+			{% for currency in Currencies %}     
+				<option name="{{ currency.abbreviation }}">{{ currency.abbreviation }}</option>
+			{% endfor %}
+		</select></td>
+	<td><input type="number" maxlength="10" name="account_customerid""></td>
+	<td><input type="number" name="account_balance""> </td>
 	<td> <input type="Submit" value="Add Account"/> </td>
 	</tr>
 </table>
