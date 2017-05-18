@@ -18,7 +18,7 @@ table#t01 ,tr#t01 , td#t01{
 }
 
 </style>
-<form action="{% url 'banking_system:transfer' %}" method="post">
+<form name = "myForm" onsubmit="return validateForm()" action="{% url 'banking_system:transfer' %}" method="post">
 {% csrf_token %}
 <table id="t01" width="70%">
 	<tr>
@@ -43,3 +43,20 @@ table#t01 ,tr#t01 , td#t01{
 </form>
 </body>
 </html>
+
+<script>
+function validateForm() {
+    var x = document.forms["myForm"]["transfer_amount"].value;
+    console.log(x)
+    if (x == "") {
+        alert("Transfer Amount must be filled out");
+        return false;
+    }
+
+    var x = document.forms["myForm"]["recieving_accountnum"].value;
+    if (x == "") {
+        alert("Recieving Account Number must be filled out");
+        return false;
+    }
+}
+</script>

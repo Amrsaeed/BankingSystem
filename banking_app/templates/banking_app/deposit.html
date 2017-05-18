@@ -20,7 +20,7 @@ table#t01 ,tr#t01 , td#t01{
 
 </style>
 
-<form action="{% url 'banking_system:deposit' %}" method="post">
+<form name = "myForm" onsubmit="return validateForm()" action="{% url 'banking_system:deposit' %}" method="post">
 {% csrf_token %}
 <table id ="t01" width="70%">
 	<tr>
@@ -45,3 +45,12 @@ table#t01 ,tr#t01 , td#t01{
 </body>
 </html>
 
+<script>
+function validateForm() {
+    var x = document.forms["myForm"]["deposit_amount"].value;
+    if (x == "") {
+        alert("Deposit must be filled out");
+        return false;
+    }
+} 
+</script>

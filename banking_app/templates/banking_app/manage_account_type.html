@@ -10,7 +10,7 @@
 
 {% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
 
-<form action="{% url 'banking_system:manageAccountTypes' %}" method="post">
+<form name = "myForm" onsubmit="return validateForm()" action="{% url 'banking_system:manageAccountTypes' %}" method="post">
 {% csrf_token %}
 <table style='border:1px solid black'>
 	<tr>
@@ -42,4 +42,44 @@
 </body>
 </html>
 
+<script>
+function validateForm() {
+    var x = document.forms["myForm"]["Debit_interest"].value;
+    if (x == "") {
+        alert("Debit Interest must be filled out");
+        return false;
+    }
+
+    var x = document.forms["myForm"]["Debit_ceiling"].value;
+    if (x == "") {
+        alert("Debit Ceiling must be filled out");
+        return false;
+    }
+
+    var x = document.forms["myForm"]["Current_interest"].value;
+    if (x == "") {
+        alert("Current Interest must be filled out");
+        return false;
+    }
+
+    var x = document.forms["myForm"]["Current_ceiling"].value;
+    if (x == "") {
+        alert("Current Ceiling must be filled out");
+        return false;
+    }
+
+    var x = document.forms["myForm"]["Saving_interest"].value;
+    if (x == "") {
+        alert("Saving Interest must be filled out");
+        return false;
+    }
+
+    var x = document.forms["myForm"]["Saving_ceiling"].value;
+    if (x == "") {
+        alert("Saving Ceiling must be filled out");
+        return false;
+    }
+
+} 
+</script>
 

@@ -4,7 +4,7 @@
 
 {% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
 
-<form action="{% url 'banking_system:create_user' %}" method="post">
+<form name = "myForm" onsubmit="return validateForm()" action="{% url 'banking_system:create_user' %}" method="post">
 {% csrf_token %}
 <table class="table">
                     <tr>
@@ -52,6 +52,41 @@
 <input type="submit" value="Create User" />
 
 </form>
+
+<script>
+function validateForm() {
+    var x = document.forms["myForm"]["password"].value;
+    if (x == "") {
+        alert("Password must be filled out");
+        return false;
+    }
+
+    var x = document.forms["myForm"]["username"].value;
+    if (x == "") {
+        alert("Username must be filled out");
+        return false;
+    }
+
+    var x = document.forms["myForm"]["id"].value;
+    if (x == "") {
+        alert("National ID must be filled out");
+        return false;
+    }
+
+    var x = document.forms["myForm"]["fname"].value;
+    if (x == "") {
+        alert("First Name must be filled out");
+        return false;
+    }
+
+    var x = document.forms["myForm"]["lname"].value;
+    if (x == "") {
+        alert("Last Name must be filled out");
+        return false;
+    }
+
+} 
+</script>
 
 
 

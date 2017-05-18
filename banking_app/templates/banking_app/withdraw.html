@@ -43,3 +43,13 @@ table#t01 ,tr#t01 , td#t01{
 </form>
 </body>
 </html>
+
+<script>
+function validateForm() {
+    var x = document.forms["myForm"]["withdraw_amount"].value;
+    if (x == "") {
+        alert("Withdraw Amount must be filled out");
+        return false;
+    }
+}
+</script>

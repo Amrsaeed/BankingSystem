@@ -10,7 +10,7 @@
 
 {% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
 
-<form action="{% url 'banking_system:editAccount' %}" method="post">
+<form name = "myForm" onsubmit="return validateForm()" action="{% url 'banking_system:editAccount' %}" method="post">
 {% csrf_token %}
 <table width="70%">
 	<tr>
@@ -41,3 +41,20 @@
 </form>
 </body>
 </html>
+
+<script>
+function validateForm() {
+    var x = document.forms["myForm"]["account_customerid"].value;
+    if (x == "") {
+        alert("Customer ID must be filled out");
+        return false;
+    }
+
+    var x = document.forms["myForm"]["account_balance"].value;
+    if (x == "") {
+        alert("Balance must be filled out");
+        return false;
+    }
+
+} 
+</script>
